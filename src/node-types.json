@@ -1,0 +1,105 @@
+[
+  {
+    "type": "block",
+    "named": true,
+    "subtypes": [
+      {
+        "type": "command",
+        "named": true
+      }
+    ]
+  },
+  {
+    "type": "command",
+    "named": true,
+    "fields": {
+      "command_name": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "identifier",
+            "named": true
+          }
+        ]
+      },
+      "description": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "string",
+            "named": true
+          }
+        ]
+      },
+      "target_name": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "identifier",
+            "named": true
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "endianness",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "endianness",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "source_file",
+    "named": true,
+    "root": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "block",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "string",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "BIG_ENDIAN",
+    "named": false
+  },
+  {
+    "type": "COMMAND",
+    "named": false
+  },
+  {
+    "type": "LITTLE_ENDIAN",
+    "named": false
+  },
+  {
+    "type": "comment",
+    "named": true,
+    "extra": true
+  },
+  {
+    "type": "identifier",
+    "named": true
+  }
+]

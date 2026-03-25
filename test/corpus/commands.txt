@@ -1,0 +1,100 @@
+===
+Basic Command
+===
+COMMAND INST CMD BIG_ENDIAN "Description"
+
+---
+
+(source_file
+  (command
+    target_name: (identifier)
+    command_name: (identifier)
+    (endianness)
+    description: (string)))
+
+===
+Command with Parameters
+===
+COMMAND INST CMD BIG_ENDIAN
+  PARAMETER ADDR 0 8 UINT 0 255 0 "Address"
+  PARAMETER DATA 8 16 INT -32768 32767 0 "Data"
+
+---
+
+(source_file
+  (command
+    target_name: (identifier)
+    command_name: (identifier)
+    (endianness))
+  (parameter_definition
+    name: (identifier)
+    bit_offset: (number)
+    bit_size: (number)
+    data_type: (identifier)
+    min: (number)
+    max: (number)
+    default: (number)
+    description: (string))
+  (parameter_definition
+    name: (identifier)
+    bit_offset: (number)
+    bit_size: (number)
+    data_type: (identifier)
+    min: (number)
+    max: (number)
+    default: (number)
+    description: (string)))
+
+===
+Select and Append
+===
+SELECT_COMMAND INST CMD
+  APPEND_PARAMETER EXTRA 8 UINT 0 255 0
+
+---
+
+(source_file
+  (select_command
+    target_name: (identifier)
+    command_name: (identifier))
+  (append_parameter_definition
+    name: (identifier)
+    bit_size: (number)
+    data_type: (identifier)
+    min: (number)
+    max: (number)
+    default: (number)))
+
+===
+Command with State
+===
+COMMAND INST MODE BIG_ENDIAN
+  PARAMETER VALUE 0 8 UINT 0 2 0
+    STATE OFF 0
+    STATE ON 1
+    STATE ERROR 2
+
+---
+
+(source_file
+  (command
+    target_name: (identifier)
+    command_name: (identifier)
+    (endianness))
+  (parameter_definition
+    name: (identifier)
+    bit_offset: (number)
+    bit_size: (number)
+    data_type: (identifier)
+    min: (number)
+    max: (number)
+    default: (number))
+  (state_definition
+    state_name: (identifier)
+    state_value: (number))
+  (state_definition
+    state_name: (identifier)
+    state_value: (number))
+  (state_definition
+    state_name: (identifier)
+    state_value: (number)))

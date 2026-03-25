@@ -9,9 +9,27 @@
 
 export default grammar({
   name: "cosmos",
-
+  extras: ($) => [$.comment, /\s/],
+  supertypes: ($) => [$.block],
   rules: {
-    // TODO: add the actual grammar rules
-    source_file: $ => "hello"
-  }
+    source_file: ($) => repeat1($.block),
+    block: ($) => choice($.command),
+    command: ($) =>
+      seq(
+        "COMMAND",
+        field("target_name", $.identifier),
+        field("command_name",$.identifier),
+        $.endianness,
+        optional($._description),
+      ),
+    comment: (_) => token(seq("#", /.*/)),
+    string: (_) => choice(/"[^"]*"/, /'[^']*'/),
+    endianness: (_) => choice("BIG_ENDIAN", "LITTLE_ENDIAN"),
+    identifier: (_) => /\S+/,
+
+    _description: ($) => field("description", $.string),
+    _spacing: ($) => repeat1(choice($._space, $._newline)),
+    _space: (_) => /[ \t]+/,
+    _newline: (_) => /\r?\n/,
+  },
 });
