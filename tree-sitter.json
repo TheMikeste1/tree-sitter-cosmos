@@ -1,0 +1,43 @@
+{
+  "$schema": "https://tree-sitter.github.io/tree-sitter/assets/schemas/config.schema.json",
+  "grammars": [
+    {
+      "name": "cosmos",
+      "camelcase": "Cosmos",
+      "title": "Cosmos",
+      "scope": "source.cosmos",
+      "file-types": [
+        "cosmos",
+        "cosmos-plugin"
+      ],
+      "injection-regex": "^cosmos$",
+      "class-name": "TreeSitterCosmos"
+    }
+  ],
+  "metadata": {
+    "version": "0.1.0",
+    "license": "MIT",
+    "description": "OpenC3 Cosmos definition parser",
+    "authors": [
+      {
+        "name": "Michael Hegerhorst",
+        "email": "michael.hegerhorst@gmail.com",
+        "url": ""
+      }
+    ],
+    "links": {
+      "repository": "https://github.com/TheMikeste1/tree-sitter-cosmos",
+      "funding": ""
+    }
+  },
+  "bindings": {
+    "c": true,
+    "go": true,
+    "java": false,
+    "node": true,
+    "python": true,
+    "rust": true,
+    "swift": true,
+    "zig": false
+  }
+}
