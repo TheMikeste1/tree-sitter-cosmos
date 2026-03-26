@@ -21,25 +21,26 @@ COMMAND INST CMD BIG_ENDIAN
 ---
 
 (source_file
-  (command_definition
-    target: (identifier)
-    name: (identifier)
-    endianness: (endianness)
-    (modifier_hidden)
-    (modifier_disabled)
-    (modifier_hazardous)
-    (modifier_catchall)
-    (modifier_virtual)
-    (modifier_restricted)
-    (modifier_accessor class: (identifier) argument: (string))
-    (modifier_subpacketizer class: (identifier) argument: (string))
-    (modifier_template content: (string))
-    (modifier_response target: (identifier) packet: (identifier))
-    (modifier_error_response target: (identifier) packet: (identifier))
-    (modifier_related_item target: (identifier) item: (identifier))
-    (modifier_screen target: (identifier) screen: (identifier))
-    (modifier_validator class: (identifier) argument: (string))
-    (modifier_meta key: (identifier) value: (identifier))))
+  (command
+    (command_definition
+      target: (identifier)
+      name: (identifier)
+      endianness: (endianness))
+      (modifier_hidden)
+      (modifier_disabled)
+      (modifier_hazardous)
+      (modifier_catchall)
+      (modifier_virtual)
+      (modifier_restricted)
+      (modifier_accessor class: (identifier) argument: (string))
+      (modifier_subpacketizer class: (identifier) argument: (string))
+      (modifier_template (string))
+      (modifier_response target: (identifier) packet: (identifier))
+      (modifier_error_response target: (identifier) packet: (identifier))
+      (modifier_related_item target: (identifier) item: (identifier))
+      (modifier_screen target: (identifier) screen: (identifier))
+      (modifier_validator class: (filename) argument: (string))
+      (modifier_meta key: (identifier) value: (identifier))))
 
 =================
 Parameter Modifiers
@@ -65,33 +66,34 @@ COMMAND INST CMD BIG_ENDIAN
 ---
 
 (source_file
-  (command_definition
-    target: (identifier)
-    name: (identifier)
-    endianness: (endianness)
-    (parameter_definition
+  (command
+    (command_definition
+      target: (identifier)
       name: (identifier)
-      bit_offset: (number)
-      bit_size: (number)
-      data_type: (identifier)
-      min: (number)
-      max: (number)
-      default: (number)
-      (modifier_state name: (identifier) value: (number))
-      (modifier_state name: (identifier) value: (number) (modifier_hazardous))
-      (modifier_units label: (string) abbreviation: (string))
-      (modifier_format_string (string))
-      (modifier_description (string))
-      (modifier_meta key: (identifier) value: (identifier))
-      (modifier_overlap)
-      (modifier_key (identifier))
-      (modifier_variable_bit_size length_item: (identifier) bits_per_count: (number) value_bit_offset: (number))
-      (modifier_obfuscate)
-      (modifier_required)
-      (modifier_minimum_value (number))
-      (modifier_maximum_value (number))
-      (modifier_default_value (number))
-      (modifier_overflow (identifier)))))
+      endianness: (endianness))
+      (parameter_definition
+        name: (identifier)
+        bit_offset: (number)
+        bit_size: (number)
+        data_type: (number_dtype)
+        min: (number)
+        max: (number)
+        default: (number)
+        (modifier_state name: (identifier) value: (number))
+        (modifier_state name: (identifier) value: (number) (modifier_hazardous))
+        (modifier_units label: (string) abbreviation: (string))
+        (modifier_format_string (string))
+        (modifier_description (string))
+        (modifier_meta key: (identifier) value: (identifier))
+        (modifier_overlap)
+        (modifier_key (identifier))
+        (modifier_variable_bit_size length_item: (identifier) bits_per_count: (number) value_bit_offset: (number))
+        (modifier_obfuscate)
+        (modifier_required)
+        (modifier_minimum_value (number))
+        (modifier_maximum_value (number))
+        (modifier_default_value (number))
+        (modifier_overflow (identifier))))))
 
 =================
 Parameter Conversions
@@ -108,21 +110,22 @@ COMMAND INST CMD BIG_ENDIAN
 ---
 
 (source_file
-  (command_definition
-    target: (identifier)
-    name: (identifier)
-    endianness: (endianness)
-    (parameter_definition
+  (command
+    (command_definition
+      target: (identifier)
       name: (identifier)
-      bit_offset: (number)
-      bit_size: (number)
-      data_type: (identifier)
-      min: (number)
-      max: (number)
-      default: (number)
-      (conversion_write script: (identifier) argument: (string))
-      (conversion_poly_write (number) (number) (number))
-      (conversion_seg_poly_write
-        (number) (number) (number) (number) (number)
-        (number) (number) (number) (number) (number))
-      (conversion_generic_write (code)))))
+      endianness: (endianness))
+      (parameter_definition
+        name: (identifier)
+        bit_offset: (number)
+        bit_size: (number)
+        data_type: (number_dtype)
+        min: (number)
+        max: (number)
+        default: (number)
+        (conversion_write script: (identifier) argument: (string))
+        (conversion_poly_write (number) (number) (number))
+        (conversion_seg_poly_write
+          (number) (number) (number) (number) (number)
+          (number) (number) (number) (number) (number))
+        (conversion_generic_write (code))))))

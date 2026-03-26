@@ -21,7 +21,7 @@ TELEMETRY INST HEALTH BIG_ENDIAN
   (telemetry_definition
     target: (identifier)
     name: (identifier)
-    endianness: (endianness)
+    endianness: (endianness))
     (modifier_hidden)
     (modifier_catchall)
     (modifier_virtual)
@@ -61,12 +61,12 @@ TELEMETRY INST HEALTH BIG_ENDIAN
   (telemetry_definition
     target: (identifier)
     name: (identifier)
-    endianness: (endianness)
+    endianness: (endianness))
     (item_definition
       name: (identifier)
       bit_offset: (number)
       bit_size: (number)
-      data_type: (identifier)
+      data_type: (number_dtype)
       (modifier_state name: (identifier) value: (number))
       (modifier_state name: (identifier) value: (number))
       (modifier_units label: (string) abbreviation: (string))
@@ -107,12 +107,12 @@ TELEMETRY INST HEALTH BIG_ENDIAN
   (telemetry_definition
     target: (identifier)
     name: (identifier)
-    endianness: (endianness)
+    endianness: (endianness))
     (item_definition
       name: (identifier)
       bit_offset: (number)
       bit_size: (number)
-      data_type: (identifier)
+      data_type: (number_dtype)
       (conversion_read script: (identifier) argument: (string))
       (conversion_poly_read (number) (number) (number))
       (conversion_seg_poly_read

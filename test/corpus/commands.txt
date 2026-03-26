@@ -6,11 +6,12 @@ COMMAND INST CMD BIG_ENDIAN "Description"
 ---
 
 (source_file
-  (command_definition
-    target: (identifier)
-    name: (identifier)
-    endianness: (endianness)
-    description: (string)))
+  (command
+    (command_definition
+      target: (identifier)
+      name: (identifier)
+      endianness: (endianness)
+      description: (string))))
 
 =================
 Select Command
@@ -20,9 +21,10 @@ SELECT_COMMAND INST CMD
 ---
 
 (source_file
-  (select_command_definition
-    target: (identifier)
-    name: (identifier)))
+  (select_command
+    (select_command_definition
+      target: (identifier)
+      name: (identifier))))
 
 =================
 Parameter Definition
@@ -33,19 +35,20 @@ COMMAND INST CMD BIG_ENDIAN
 ---
 
 (source_file
-  (command_definition
-    target: (identifier)
-    name: (identifier)
-    endianness: (endianness)
-    (parameter_definition
+  (command
+    (command_definition
+      target: (identifier)
       name: (identifier)
-      bit_offset: (number)
-      bit_size: (number)
-      data_type: (identifier)
-      min: (number)
-      max: (number)
-      default: (number)
-      description: (string))))
+      endianness: (endianness))
+      (parameter_definition
+        name: (identifier)
+        bit_offset: (number)
+        bit_size: (number)
+        data_type: (number_dtype)
+        min: (number)
+        max: (number)
+        default: (number)
+        description: (string))))
 
 =================
 Append Parameter
@@ -56,18 +59,19 @@ COMMAND INST CMD BIG_ENDIAN
 ---
 
 (source_file
-  (command_definition
-    target: (identifier)
-    name: (identifier)
-    endianness: (endianness)
-    (append_parameter_definition
+  (command
+    (command_definition
+      target: (identifier)
       name: (identifier)
-      bit_size: (number)
-      data_type: (identifier)
-      min: (number)
-      max: (number)
-      default: (number)
-      description: (string))))
+      endianness: (endianness))
+      (append_parameter_definition
+        name: (identifier)
+        bit_size: (number)
+        data_type: (number_dtype)
+        min: (number)
+        max: (number)
+        default: (number)
+        description: (string))))
 
 =================
 ID Parameter
@@ -78,16 +82,17 @@ COMMAND INST CMD BIG_ENDIAN
 ---
 
 (source_file
-  (command_definition
-    target: (identifier)
-    name: (identifier)
-    endianness: (endianness)
-    (id_parameter_definition
+  (command
+    (command_definition
+      target: (identifier)
       name: (identifier)
-      bit_offset: (number)
-      bit_size: (number)
-      data_type: (identifier)
-      value: (number))))
+      endianness: (endianness))
+      (id_parameter_definition
+        name: (identifier)
+        bit_offset: (number)
+        bit_size: (number)
+        data_type: (number_dtype)
+        value: (number)))))
 
 =================
 Array Parameter
@@ -98,18 +103,19 @@ COMMAND INST CMD BIG_ENDIAN
 ---
 
 (source_file
-  (command_definition
-    target: (identifier)
-    name: (identifier)
-    endianness: (endianness)
-    (array_parameter_definition
+  (command
+    (command_definition
+      target: (identifier)
       name: (identifier)
-      bit_offset: (number)
-      item_bit_size: (number)
-      item_data_type: (identifier)
-      array_bit_size: (number)
-      description: (string)
-      endianness: (endianness))))
+      endianness: (endianness))
+      (array_parameter_definition
+        name: (identifier)
+        bit_offset: (number)
+        item_bit_size: (number)
+        item_data_type: (number_dtype)
+        array_bit_size: (number)
+        description: (string)
+        endianness: (endianness)))))
 
 =================
 Structure Definition
@@ -123,13 +129,13 @@ STRUCTURE CCSDS_HEADER BIG_ENDIAN "Standard CCSDS Header"
 (source_file
   (structure_definition
     name: (identifier)
-    endianness: (endianness)
+    endianness: (endianness))
     description: (string)
     (parameter_definition
       name: (identifier)
       bit_offset: (number)
       bit_size: (number)
-      data_type: (identifier)
+      data_type: (number_dtype)
       min: (number)
       max: (number)
       default: (number)
@@ -138,7 +144,7 @@ STRUCTURE CCSDS_HEADER BIG_ENDIAN "Standard CCSDS Header"
       name: (identifier)
       bit_offset: (number)
       bit_size: (number)
-      data_type: (identifier)
+      data_type: (number_dtype)
       min: (number)
       max: (number)
       default: (number)
@@ -153,12 +159,13 @@ COMMAND INST CMD BIG_ENDIAN
 ---
 
 (source_file
-  (command_definition
-    target: (identifier)
-    name: (identifier)
-    endianness: (endianness)
-    (append_structure_definition
-      name: (identifier))))
+  (command
+    (command_definition
+      target: (identifier)
+      name: (identifier)
+      endianness: (endianness))
+      (append_structure_definition
+        name: (identifier)))))
 
 =================
 Delete Parameter
@@ -169,9 +176,10 @@ COMMAND INST CMD BIG_ENDIAN
 ---
 
 (source_file
-  (command_definition
-    target: (identifier)
-    name: (identifier)
-    endianness: (endianness)
-    (delete_parameter_definition
-      name: (identifier))))
+  (command
+    (command_definition
+      target: (identifier)
+      name: (identifier)
+      endianness: (endianness))
+      (delete_parameter_definition
+        name: (identifier)))))

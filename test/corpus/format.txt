@@ -6,10 +6,11 @@ COMMAND INST <%= "CMD" %> BIG_ENDIAN
 ---
 
 (source_file
-  (command_definition
-    target: (identifier)
-    name: (erb_expression (code))
-    endianness: (endianness)))
+  (command
+    (command_definition
+      target: (identifier)
+      name: (erb_expression (code))
+      endianness: (endianness))))
 
 =================
 ERB Directive
@@ -27,7 +28,7 @@ ERB Directive
       name: (erb_expression (code))
       bit_offset: (number)
       bit_size: (number)
-      data_type: (identifier)))
+      data_type: (number_dtype)))
   (erb_directive (code)))
 
 =================
@@ -40,10 +41,11 @@ COMMAND INST CMD BIG_ENDIAN
 
 (source_file
   (erb_comment (code))
-  (command_definition
-    target: (identifier)
-    name: (identifier)
-    endianness: (endianness)))
+  (command
+    (command_definition
+      target: (identifier)
+      name: (identifier)
+      endianness: (endianness))))
 
 =================
 String Concatenation
@@ -54,13 +56,14 @@ COMMAND INST CMD BIG_ENDIAN "Description part 1 " +
 ---
 
 (source_file
-  (command_definition
-    target: (identifier)
-    name: (identifier)
-    endianness: (endianness)
-    description: (string_concatenation
-      (string)
-      (string))))
+  (command
+    (command_definition
+      target: (identifier)
+      name: (identifier)
+      endianness: (endianness))
+      description: (string_concatenation
+        (string)
+        (string)))))
 
 =================
 Numeric Literals
@@ -74,42 +77,43 @@ COMMAND INST CMD BIG_ENDIAN
 ---
 
 (source_file
-  (command_definition
-    target: (identifier)
-    name: (identifier)
-    endianness: (endianness)
-    (parameter_definition
+  (command
+    (command_definition
+      target: (identifier)
       name: (identifier)
-      bit_offset: (number)
-      bit_size: (number)
-      data_type: (identifier)
-      min: (number)
-      max: (number)
-      default: (number))
-    (parameter_definition
-      name: (identifier)
-      bit_offset: (number)
-      bit_size: (number)
-      data_type: (identifier)
-      min: (number)
-      max: (number)
-      default: (number))
-    (parameter_definition
-      name: (identifier)
-      bit_offset: (number)
-      bit_size: (number)
-      data_type: (identifier)
-      min: (number)
-      max: (number)
-      default: (number))
-    (parameter_definition
-      name: (identifier)
-      bit_offset: (number)
-      bit_size: (number)
-      data_type: (identifier)
-      min: (number)
-      max: (number)
-      default: (number))))
+      endianness: (endianness))
+      (parameter_definition
+        name: (identifier)
+        bit_offset: (number)
+        bit_size: (number)
+        data_type: (number_dtype)
+        min: (number)
+        max: (number)
+        default: (number))
+      (parameter_definition
+        name: (identifier)
+        bit_offset: (number)
+        bit_size: (number)
+        data_type: (number_dtype)
+        min: (number)
+        max: (number)
+        default: (number))
+      (parameter_definition
+        name: (identifier)
+        bit_offset: (number)
+        bit_size: (number)
+        data_type: (number_dtype)
+        min: (number)
+        max: (number)
+        default: (number))
+      (parameter_definition
+        name: (identifier)
+        bit_offset: (number)
+        bit_size: (number)
+        data_type: (number_dtype)
+        min: (number)
+        max: (number)
+        default: (number)))))
 
 =================
 Line Continuation
@@ -120,11 +124,12 @@ COMMAND INST CMD &
 ---
 
 (source_file
-  (command_definition
-    target: (identifier)
-    name: (identifier)
-    endianness: (endianness)
-    description: (string)))
+  (command
+    (command_definition
+      target: (identifier)
+      name: (identifier)
+      endianness: (endianness))
+      description: (string))))
 
 =================
 Render (Include)

@@ -9,7 +9,7 @@ TELEMETRY INST HEALTH BIG_ENDIAN "Description"
   (telemetry_definition
     target: (identifier)
     name: (identifier)
-    endianness: (endianness)
+    endianness: (endianness))
     description: (string)))
 
 =================
@@ -36,12 +36,12 @@ TELEMETRY INST HEALTH BIG_ENDIAN
   (telemetry_definition
     target: (identifier)
     name: (identifier)
-    endianness: (endianness)
+    endianness: (endianness))
     (item_definition
       name: (identifier)
       bit_offset: (number)
       bit_size: (number)
-      data_type: (identifier)
+      data_type: (number_dtype)
       description: (string))))
 
 =================
@@ -56,11 +56,11 @@ TELEMETRY INST HEALTH BIG_ENDIAN
   (telemetry_definition
     target: (identifier)
     name: (identifier)
-    endianness: (endianness)
+    endianness: (endianness))
     (append_item_definition
       name: (identifier)
       bit_size: (number)
-      data_type: (identifier)
+      data_type: (number_dtype)
       description: (string))))
 
 =================
@@ -75,12 +75,12 @@ TELEMETRY INST HEALTH BIG_ENDIAN
   (telemetry_definition
     target: (identifier)
     name: (identifier)
-    endianness: (endianness)
+    endianness: (endianness))
     (id_item_definition
       name: (identifier)
       bit_offset: (number)
       bit_size: (number)
-      data_type: (identifier)
+      data_type: (number_dtype)
       value: (number))))
 
 =================
@@ -95,7 +95,7 @@ TELEMETRY INST HEALTH BIG_ENDIAN
   (telemetry_definition
     target: (identifier)
     name: (identifier)
-    endianness: (endianness)
+    endianness: (endianness))
     (array_item_definition
       name: (identifier)
       bit_offset: (number)
@@ -116,7 +116,7 @@ TELEMETRY INST HEALTH BIG_ENDIAN
   (telemetry_definition
     target: (identifier)
     name: (identifier)
-    endianness: (endianness)
+    endianness: (endianness))
     (select_item_definition
       name: (identifier))))
 
@@ -132,6 +132,6 @@ TELEMETRY INST HEALTH BIG_ENDIAN
   (telemetry_definition
     target: (identifier)
     name: (identifier)
-    endianness: (endianness)
+    endianness: (endianness))
     (delete_item_definition
       name: (identifier))))
