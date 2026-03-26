@@ -115,8 +115,8 @@ COMMAND INST CMD BIG_ENDIAN
 Structure Definition
 =================
 STRUCTURE CCSDS_HEADER BIG_ENDIAN "Standard CCSDS Header"
-  PARAMETER VERSION 0 3 UINT 0 "Version"
-  PARAMETER TYPE    3 1 UINT 0 "Type"
+  PARAMETER VERSION 0 3 UINT 0 0 0 "Version"
+  PARAMETER TYPE    3 1 UINT 0 0 0 "Type"
 
 ---
 
@@ -130,6 +130,8 @@ STRUCTURE CCSDS_HEADER BIG_ENDIAN "Standard CCSDS Header"
       bit_offset: (number)
       bit_size: (number)
       data_type: (identifier)
+      min: (number)
+      max: (number)
       default: (number)
       description: (string))
     (parameter_definition
@@ -137,6 +139,8 @@ STRUCTURE CCSDS_HEADER BIG_ENDIAN "Standard CCSDS Header"
       bit_offset: (number)
       bit_size: (number)
       data_type: (identifier)
+      min: (number)
+      max: (number)
       default: (number)
       description: (string))))
 

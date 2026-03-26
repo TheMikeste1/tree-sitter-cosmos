@@ -135,7 +135,7 @@ Render (Include)
 
 (source_file
   (erb_expression
-    (code
+    code: (code
       (render_call
         file: (string)
         (locals (identifier) (number))))))
