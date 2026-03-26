@@ -1,12 +1,12 @@
 import XCTest
 import SwiftTreeSitter
-import TreeSitterCosmos
+import TreeSitterCOSMOS
 
-final class TreeSitterCosmosTests: XCTestCase {
+final class TreeSitterCOSMOSTests: XCTestCase {
     func testCanLoadGrammar() throws {
         let parser = Parser()
         let language = Language(language: tree_sitter_cosmos())
         XCTAssertNoThrow(try parser.setLanguage(language),
-                         "Error loading Cosmos grammar")
+                         "Error loading COSMOS grammar")
     }
 }

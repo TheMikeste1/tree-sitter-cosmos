@@ -1,7 +1,7 @@
 {
   "name": "tree-sitter-cosmos",
   "version": "0.1.0",
-  "description": "OpenC3 Cosmos definition parser",
+  "description": "OpenC3 COSMOS definition parser",
   "type": "module",
   "repository": {
     "type": "git",

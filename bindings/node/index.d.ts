@@ -25,10 +25,10 @@ type NodeInfo =
  *
  * @example
  * import Parser from "tree-sitter";
- * import Cosmos from "tree-sitter-cosmos";
+ * import COSMOS from "tree-sitter-cosmos";
  *
  * const parser = new Parser();
- * parser.setLanguage(Cosmos);
+ * parser.setLanguage(COSMOS);
  */
 declare const binding: {
   /**

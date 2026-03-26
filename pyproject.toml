@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "tree-sitter-cosmos"
-description = "OpenC3 Cosmos definition parser"
+description = "OpenC3 COSMOS definition parser"
 version = "0.1.0"
 keywords = ["incremental", "parsing", "tree-sitter", "cosmos"]
 classifiers = [

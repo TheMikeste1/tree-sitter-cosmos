@@ -1,5 +1,5 @@
 /**
- * @file OpenC3 Cosmos definition parser
+ * @file OpenC3 COSMOS definition parser
  * @author Michael Hegerhorst <michael.hegerhorst@gmail.com>
  * @license MIT
  */

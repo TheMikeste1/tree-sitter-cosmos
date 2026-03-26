@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 3.13)
 
 project(tree-sitter-cosmos
         VERSION "0.1.0"
-        DESCRIPTION "OpenC3 Cosmos definition parser"
+        DESCRIPTION "OpenC3 COSMOS definition parser"
         HOMEPAGE_URL "https://github.com/TheMikeste1/tree-sitter-cosmos"
         LANGUAGES C)
 

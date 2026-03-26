@@ -1,4 +1,4 @@
-"""OpenC3 Cosmos definition parser"""
+"""OpenC3 COSMOS definition parser"""
 
 from importlib.resources import files as _files
 

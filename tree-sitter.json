@@ -3,21 +3,21 @@
   "grammars": [
     {
       "name": "cosmos",
-      "camelcase": "Cosmos",
-      "title": "Cosmos",
+      "camelcase": "COSMOS",
+      "title": "COSMOS",
       "scope": "source.cosmos",
       "file-types": [
         "cosmos",
         "cosmos-plugin"
       ],
       "injection-regex": "^cosmos$",
-      "class-name": "TreeSitterCosmos"
+      "class-name": "TreeSitterCOSMOS"
     }
   ],
   "metadata": {
     "version": "0.1.0",
     "license": "MIT",
-    "description": "OpenC3 Cosmos definition parser",
+    "description": "OpenC3 COSMOS definition parser",
     "authors": [
       {
         "name": "Michael Hegerhorst",

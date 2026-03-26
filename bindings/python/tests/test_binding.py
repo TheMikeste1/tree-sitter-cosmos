@@ -9,4 +9,4 @@ class TestLanguage(TestCase):
         try:
             Parser(Language(tree_sitter_cosmos.language()))
         except Exception:
-            self.fail("Error loading Cosmos grammar")
+            self.fail("Error loading COSMOS grammar")
