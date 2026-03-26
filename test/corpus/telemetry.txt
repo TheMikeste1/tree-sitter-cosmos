@@ -1,0 +1,137 @@
+=================
+Telemetry Basic
+=================
+TELEMETRY INST HEALTH BIG_ENDIAN "Description"
+
+---
+
+(source_file
+  (telemetry_definition
+    target: (identifier)
+    name: (identifier)
+    endianness: (endianness)
+    description: (string)))
+
+=================
+Select Telemetry
+=================
+SELECT_TELEMETRY INST HEALTH
+
+---
+
+(source_file
+  (select_telemetry_definition
+    target: (identifier)
+    name: (identifier)))
+
+=================
+Item Definition
+=================
+TELEMETRY INST HEALTH BIG_ENDIAN
+  ITEM VOLTAGE 0 32 FLOAT "Bus Voltage"
+
+---
+
+(source_file
+  (telemetry_definition
+    target: (identifier)
+    name: (identifier)
+    endianness: (endianness)
+    (item_definition
+      name: (identifier)
+      bit_offset: (number)
+      bit_size: (number)
+      data_type: (identifier)
+      description: (string))))
+
+=================
+Append Item
+=================
+TELEMETRY INST HEALTH BIG_ENDIAN
+  APPEND_ITEM CURRENT 32 FLOAT "Bus Current"
+
+---
+
+(source_file
+  (telemetry_definition
+    target: (identifier)
+    name: (identifier)
+    endianness: (endianness)
+    (append_item_definition
+      name: (identifier)
+      bit_size: (number)
+      data_type: (identifier)
+      description: (string))))
+
+=================
+ID Item
+=================
+TELEMETRY INST HEALTH BIG_ENDIAN
+  ID_ITEM PKT_ID 0 8 UINT 0x42
+
+---
+
+(source_file
+  (telemetry_definition
+    target: (identifier)
+    name: (identifier)
+    endianness: (endianness)
+    (id_item_definition
+      name: (identifier)
+      bit_offset: (number)
+      bit_size: (number)
+      data_type: (identifier)
+      value: (number))))
+
+=================
+Array Item
+=================
+TELEMETRY INST HEALTH BIG_ENDIAN
+  ARRAY_ITEM TEMPERATURES 32 16 FLOAT 128 "Sensors"
+
+---
+
+(source_file
+  (telemetry_definition
+    target: (identifier)
+    name: (identifier)
+    endianness: (endianness)
+    (array_item_definition
+      name: (identifier)
+      bit_offset: (number)
+      item_bit_size: (number)
+      item_data_type: (identifier)
+      array_bit_size: (number)
+      description: (string))))
+
+=================
+Select Item
+=================
+TELEMETRY INST HEALTH BIG_ENDIAN
+  SELECT_ITEM VOLTAGE
+
+---
+
+(source_file
+  (telemetry_definition
+    target: (identifier)
+    name: (identifier)
+    endianness: (endianness)
+    (select_item_definition
+      name: (identifier))))
+
+=================
+Delete Item
+=================
+TELEMETRY INST HEALTH BIG_ENDIAN
+  DELETE_ITEM OLD_ITEM
+
+---
+
+(source_file
+  (telemetry_definition
+    target: (identifier)
+    name: (identifier)
+    endianness: (endianness)
+    (delete_item_definition
+      name: (identifier))))

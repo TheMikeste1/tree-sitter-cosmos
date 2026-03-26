@@ -9,23 +9,25 @@
 
 export default grammar({
   name: "cosmos",
-  extras: ($) => [$.comment, /\s/],
+  extras: ($) => [$.comment, /\s/, "&"],
   supertypes: ($) => [$.block],
   rules: {
     source_file: ($) => repeat1($.block),
-    block: ($) => choice($.command),
-    command: ($) =>
-      seq(
-        "COMMAND",
-        field("target_name", $.identifier),
-        field("command_name",$.identifier),
-        $.endianness,
-        optional($._description),
-      ),
     comment: (_) => token(seq("#", /.*/)),
     string: (_) => choice(/"[^"]*"/, /'[^']*'/),
     endianness: (_) => choice("BIG_ENDIAN", "LITTLE_ENDIAN"),
     identifier: (_) => /\S+/,
+    block: ($) => choice($.command),
+
+    command: ($) =>
+      seq(
+        "COMMAND",
+        field("target_name", $.identifier),
+        field("command_name", $.identifier),
+        $.endianness,
+        optional($._description),
+      ),
+    _command_modifier: ($) => "",
 
     _description: ($) => field("description", $.string),
     _spacing: ($) => repeat1(choice($._space, $._newline)),

@@ -1,0 +1,141 @@
+=================
+ERB Expression
+=================
+COMMAND INST <%= "CMD" %> BIG_ENDIAN
+
+---
+
+(source_file
+  (command_definition
+    target: (identifier)
+    name: (erb_expression (code))
+    endianness: (endianness)))
+
+=================
+ERB Directive
+=================
+<% 10.times do |i| %>
+  ITEM TEMP_<%= i %> 0 16 UINT
+<% end %>
+
+---
+
+(source_file
+  (erb_directive (code))
+  (telemetry_definition
+    (item_definition
+      name: (erb_expression (code))
+      bit_offset: (number)
+      bit_size: (number)
+      data_type: (identifier)))
+  (erb_directive (code)))
+
+=================
+ERB Comment
+=================
+<%# This is an internal comment %>
+COMMAND INST CMD BIG_ENDIAN
+
+---
+
+(source_file
+  (erb_comment (code))
+  (command_definition
+    target: (identifier)
+    name: (identifier)
+    endianness: (endianness)))
+
+=================
+String Concatenation
+=================
+COMMAND INST CMD BIG_ENDIAN "Description part 1 " +
+                             "Description part 2"
+
+---
+
+(source_file
+  (command_definition
+    target: (identifier)
+    name: (identifier)
+    endianness: (endianness)
+    description: (string_concatenation
+      (string)
+      (string))))
+
+=================
+Numeric Literals
+=================
+COMMAND INST CMD BIG_ENDIAN
+  PARAMETER HEX 0 8 UINT 0xDEADBEEF 0xFFFFFFFF 0
+  PARAMETER BIN 8 8 UINT 0b1010 0b1111 0
+  PARAMETER OCT 16 8 UINT 0123 0777 0
+  PARAMETER FLOAT 32 32 FLOAT -1.23e4 10.5 0.0
+
+---
+
+(source_file
+  (command_definition
+    target: (identifier)
+    name: (identifier)
+    endianness: (endianness)
+    (parameter_definition
+      name: (identifier)
+      bit_offset: (number)
+      bit_size: (number)
+      data_type: (identifier)
+      min: (number)
+      max: (number)
+      default: (number))
+    (parameter_definition
+      name: (identifier)
+      bit_offset: (number)
+      bit_size: (number)
+      data_type: (identifier)
+      min: (number)
+      max: (number)
+      default: (number))
+    (parameter_definition
+      name: (identifier)
+      bit_offset: (number)
+      bit_size: (number)
+      data_type: (identifier)
+      min: (number)
+      max: (number)
+      default: (number))
+    (parameter_definition
+      name: (identifier)
+      bit_offset: (number)
+      bit_size: (number)
+      data_type: (identifier)
+      min: (number)
+      max: (number)
+      default: (number))))
+
+=================
+Line Continuation
+=================
+COMMAND INST CMD &
+  BIG_ENDIAN "Description"
+
+---
+
+(source_file
+  (command_definition
+    target: (identifier)
+    name: (identifier)
+    endianness: (endianness)
+    description: (string)))
+
+=================
+Render (Include)
+=================
+<%= render "header.txt", locals: { id: 1 } %>
+
+---
+
+(source_file
+  (erb_expression
+    (code
+      (render_call
+        file: (string)
+        (locals (identifier) (number))))))

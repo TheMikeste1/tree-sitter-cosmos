@@ -1,100 +1,173 @@
-===
-Basic Command
-===
+=================
+Command Basic
+=================
 COMMAND INST CMD BIG_ENDIAN "Description"
 
 ---
 
 (source_file
-  (command
-    target_name: (identifier)
-    command_name: (identifier)
-    (endianness)
+  (command_definition
+    target: (identifier)
+    name: (identifier)
+    endianness: (endianness)
     description: (string)))
 
-===
-Command with Parameters
-===
+=================
+Select Command
+=================
+SELECT_COMMAND INST CMD
+
+---
+
+(source_file
+  (select_command_definition
+    target: (identifier)
+    name: (identifier)))
+
+=================
+Parameter Definition
+=================
 COMMAND INST CMD BIG_ENDIAN
   PARAMETER ADDR 0 8 UINT 0 255 0 "Address"
-  PARAMETER DATA 8 16 INT -32768 32767 0 "Data"
 
 ---
 
 (source_file
-  (command
-    target_name: (identifier)
-    command_name: (identifier)
-    (endianness))
-  (parameter_definition
+  (command_definition
+    target: (identifier)
     name: (identifier)
-    bit_offset: (number)
-    bit_size: (number)
-    data_type: (identifier)
-    min: (number)
-    max: (number)
-    default: (number)
-    description: (string))
-  (parameter_definition
-    name: (identifier)
-    bit_offset: (number)
-    bit_size: (number)
-    data_type: (identifier)
-    min: (number)
-    max: (number)
-    default: (number)
-    description: (string)))
+    endianness: (endianness)
+    (parameter_definition
+      name: (identifier)
+      bit_offset: (number)
+      bit_size: (number)
+      data_type: (identifier)
+      min: (number)
+      max: (number)
+      default: (number)
+      description: (string))))
 
-===
-Select and Append
-===
-SELECT_COMMAND INST CMD
-  APPEND_PARAMETER EXTRA 8 UINT 0 255 0
+=================
+Append Parameter
+=================
+COMMAND INST CMD BIG_ENDIAN
+  APPEND_PARAMETER DATA 16 INT -32768 32767 0 "Data"
 
 ---
 
 (source_file
-  (select_command
-    target_name: (identifier)
-    command_name: (identifier))
-  (append_parameter_definition
+  (command_definition
+    target: (identifier)
     name: (identifier)
-    bit_size: (number)
-    data_type: (identifier)
-    min: (number)
-    max: (number)
-    default: (number)))
+    endianness: (endianness)
+    (append_parameter_definition
+      name: (identifier)
+      bit_size: (number)
+      data_type: (identifier)
+      min: (number)
+      max: (number)
+      default: (number)
+      description: (string))))
 
-===
-Command with State
-===
-COMMAND INST MODE BIG_ENDIAN
-  PARAMETER VALUE 0 8 UINT 0 2 0
-    STATE OFF 0
-    STATE ON 1
-    STATE ERROR 2
+=================
+ID Parameter
+=================
+COMMAND INST CMD BIG_ENDIAN
+  ID_PARAMETER OPCODE 0 8 UINT 0x01
 
 ---
 
 (source_file
-  (command
-    target_name: (identifier)
-    command_name: (identifier)
-    (endianness))
-  (parameter_definition
+  (command_definition
+    target: (identifier)
     name: (identifier)
-    bit_offset: (number)
-    bit_size: (number)
-    data_type: (identifier)
-    min: (number)
-    max: (number)
-    default: (number))
-  (state_definition
-    state_name: (identifier)
-    state_value: (number))
-  (state_definition
-    state_name: (identifier)
-    state_value: (number))
-  (state_definition
-    state_name: (identifier)
-    state_value: (number)))
+    endianness: (endianness)
+    (id_parameter_definition
+      name: (identifier)
+      bit_offset: (number)
+      bit_size: (number)
+      data_type: (identifier)
+      value: (number))))
+
+=================
+Array Parameter
+=================
+COMMAND INST CMD BIG_ENDIAN
+  ARRAY_PARAMETER DATA 16 16 UINT 256 "Data Array" BIG_ENDIAN
+
+---
+
+(source_file
+  (command_definition
+    target: (identifier)
+    name: (identifier)
+    endianness: (endianness)
+    (array_parameter_definition
+      name: (identifier)
+      bit_offset: (number)
+      item_bit_size: (number)
+      item_data_type: (identifier)
+      array_bit_size: (number)
+      description: (string)
+      endianness: (endianness))))
+
+=================
+Structure Definition
+=================
+STRUCTURE CCSDS_HEADER BIG_ENDIAN "Standard CCSDS Header"
+  PARAMETER VERSION 0 3 UINT 0 "Version"
+  PARAMETER TYPE    3 1 UINT 0 "Type"
+
+---
+
+(source_file
+  (structure_definition
+    name: (identifier)
+    endianness: (endianness)
+    description: (string)
+    (parameter_definition
+      name: (identifier)
+      bit_offset: (number)
+      bit_size: (number)
+      data_type: (identifier)
+      default: (number)
+      description: (string))
+    (parameter_definition
+      name: (identifier)
+      bit_offset: (number)
+      bit_size: (number)
+      data_type: (identifier)
+      default: (number)
+      description: (string))))
+
+=================
+Append Structure
+=================
+COMMAND INST CMD BIG_ENDIAN
+  APPEND_STRUCTURE CCSDS_HEADER
+
+---
+
+(source_file
+  (command_definition
+    target: (identifier)
+    name: (identifier)
+    endianness: (endianness)
+    (append_structure_definition
+      name: (identifier))))
+
+=================
+Delete Parameter
+=================
+COMMAND INST CMD BIG_ENDIAN
+  DELETE_PARAMETER UNUSED_FIELD
+
+---
+
+(source_file
+  (command_definition
+    target: (identifier)
+    name: (identifier)
+    endianness: (endianness)
+    (delete_parameter_definition
+      name: (identifier))))
