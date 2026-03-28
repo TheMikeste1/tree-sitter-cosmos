@@ -14,6 +14,170 @@
     ]
   },
   {
+    "type": "append_array_parameter_definition",
+    "named": true,
+    "fields": {
+      "array_bit_size": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "number",
+            "named": true
+          }
+        ]
+      },
+      "description": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "string",
+            "named": true
+          }
+        ]
+      },
+      "endianness": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "endianness",
+            "named": true
+          }
+        ]
+      },
+      "item_bit_size": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "number",
+            "named": true
+          }
+        ]
+      },
+      "item_data_type": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "dtype",
+            "named": true
+          }
+        ]
+      },
+      "name": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "identifier",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "append_id_parameter_definition",
+    "named": true,
+    "fields": {
+      "bit_size": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "number",
+            "named": true
+          }
+        ]
+      },
+      "data_type": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "BLOCK",
+            "named": false
+          },
+          {
+            "type": "STRING",
+            "named": false
+          },
+          {
+            "type": "number_dtype",
+            "named": true
+          }
+        ]
+      },
+      "default": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "number",
+            "named": true
+          },
+          {
+            "type": "string",
+            "named": true
+          }
+        ]
+      },
+      "description": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "string",
+            "named": true
+          }
+        ]
+      },
+      "endianness": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "endianness",
+            "named": true
+          }
+        ]
+      },
+      "max": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "number",
+            "named": true
+          }
+        ]
+      },
+      "min": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "number",
+            "named": true
+          }
+        ]
+      },
+      "name": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "identifier",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
     "type": "append_parameter_definition",
     "named": true,
     "fields": {
@@ -95,6 +259,82 @@
         "types": [
           {
             "type": "number",
+            "named": true
+          }
+        ]
+      },
+      "name": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "identifier",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "array_parameter_definition",
+    "named": true,
+    "fields": {
+      "array_bit_size": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "number",
+            "named": true
+          }
+        ]
+      },
+      "bit_offset": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "number",
+            "named": true
+          }
+        ]
+      },
+      "description": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "string",
+            "named": true
+          }
+        ]
+      },
+      "endianness": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "endianness",
+            "named": true
+          }
+        ]
+      },
+      "item_bit_size": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "number",
+            "named": true
+          }
+        ]
+      },
+      "item_data_type": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "dtype",
             "named": true
           }
         ]
@@ -253,9 +493,122 @@
     }
   },
   {
+    "type": "dtype",
+    "named": true,
+    "fields": {}
+  },
+  {
     "type": "endianness",
     "named": true,
     "fields": {}
+  },
+  {
+    "type": "id_parameter_definition",
+    "named": true,
+    "fields": {
+      "bit_offset": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "number",
+            "named": true
+          }
+        ]
+      },
+      "bit_size": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "number",
+            "named": true
+          }
+        ]
+      },
+      "data_type": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "BLOCK",
+            "named": false
+          },
+          {
+            "type": "STRING",
+            "named": false
+          },
+          {
+            "type": "number_dtype",
+            "named": true
+          }
+        ]
+      },
+      "default": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "number",
+            "named": true
+          },
+          {
+            "type": "string",
+            "named": true
+          }
+        ]
+      },
+      "description": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "string",
+            "named": true
+          }
+        ]
+      },
+      "endianness": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "endianness",
+            "named": true
+          }
+        ]
+      },
+      "max": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "number",
+            "named": true
+          }
+        ]
+      },
+      "min": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "number",
+            "named": true
+          }
+        ]
+      },
+      "name": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "identifier",
+            "named": true
+          }
+        ]
+      }
+    }
   },
   {
     "type": "modifier_accessor",
@@ -739,7 +1092,23 @@
       "required": true,
       "types": [
         {
+          "type": "append_array_parameter_definition",
+          "named": true
+        },
+        {
+          "type": "append_id_parameter_definition",
+          "named": true
+        },
+        {
           "type": "append_parameter_definition",
+          "named": true
+        },
+        {
+          "type": "array_parameter_definition",
+          "named": true
+        },
+        {
+          "type": "id_parameter_definition",
           "named": true
         },
         {
@@ -988,6 +1357,10 @@
     "named": false
   },
   {
+    "type": "ARRAY_PARAMETER",
+    "named": false
+  },
+  {
     "type": "BIG_ENDIAN",
     "named": false
   },
@@ -1033,6 +1406,10 @@
   },
   {
     "type": "FORMAT_STRING",
+    "named": false
+  },
+  {
+    "type": "ID_PARAMETER",
     "named": false
   },
   {

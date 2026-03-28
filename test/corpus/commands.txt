@@ -79,7 +79,7 @@ COMMAND INST CMD BIG_ENDIAN
 ID Parameter
 =================
 COMMAND INST CMD BIG_ENDIAN
-  ID_PARAMETER OPCODE 0 8 UINT 0x01
+  ID_PARAMETER OPCODE 0 8 UINT 0x01 0x01 0x01
 
 ---
 
@@ -89,12 +89,15 @@ COMMAND INST CMD BIG_ENDIAN
       target: (identifier)
       name: (identifier)
       endianness: (endianness))
-      (id_parameter_definition
-        name: (identifier)
-        bit_offset: (number)
-        bit_size: (number)
-        data_type: (number_dtype)
-        value: (number)))))
+      (parameter
+        (id_parameter_definition
+          name: (identifier)
+          bit_offset: (number)
+          bit_size: (number)
+          data_type: (number_dtype)
+          min: (number)
+          max: (number)
+          default: (number)))))
 
 =================
 Array Parameter
@@ -110,14 +113,15 @@ COMMAND INST CMD BIG_ENDIAN
       target: (identifier)
       name: (identifier)
       endianness: (endianness))
-      (array_parameter_definition
-        name: (identifier)
-        bit_offset: (number)
-        item_bit_size: (number)
-        item_data_type: (number_dtype)
-        array_bit_size: (number)
-        description: (string)
-        endianness: (endianness)))))
+      (parameter
+        (array_parameter_definition
+          name: (identifier)
+          bit_offset: (number)
+          item_bit_size: (number)
+          item_data_type: (dtype)
+          array_bit_size: (number)
+          description: (string)
+          endianness: (endianness)))))
 
 =================
 Structure Definition
