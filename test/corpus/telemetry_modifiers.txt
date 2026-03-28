@@ -1,5 +1,6 @@
 =================
 Telemetry Level Modifiers
+:skip
 =================
 TELEMETRY INST HEALTH BIG_ENDIAN
   HIDDEN
@@ -37,6 +38,7 @@ TELEMETRY INST HEALTH BIG_ENDIAN
 
 =================
 Item Modifiers
+:skip
 =================
 TELEMETRY INST HEALTH BIG_ENDIAN
   ITEM VOLTAGE 0 32 FLOAT
@@ -91,6 +93,7 @@ TELEMETRY INST HEALTH BIG_ENDIAN
 
 =================
 Item Conversions
+:skip
 =================
 TELEMETRY INST HEALTH BIG_ENDIAN
   ITEM VOLTAGE 0 32 FLOAT
