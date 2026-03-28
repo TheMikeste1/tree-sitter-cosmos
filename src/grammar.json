@@ -103,7 +103,7 @@
     },
     "identifier": {
       "type": "PATTERN",
-      "value": "\\S+"
+      "value": "[a-zA-Z_\\$][a-zA-Z0-9_\\.]*"
     },
     "number": {
       "type": "CHOICE",
@@ -113,8 +113,33 @@
           "name": "_hexadecimal_number"
         },
         {
-          "type": "PATTERN",
-          "value": "-?\\d+(\\.\\d*)?"
+          "type": "SEQ",
+          "members": [
+            {
+              "type": "PATTERN",
+              "value": "-?\\d+(\\.\\d*)?"
+            },
+            {
+              "type": "CHOICE",
+              "members": [
+                {
+                  "type": "PATTERN",
+                  "value": "e\\d+"
+                },
+                {
+                  "type": "BLANK"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "SYMBOL",
+          "name": "_octal_number"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "_binary_number"
         },
         {
           "type": "STRING",
@@ -679,6 +704,132 @@
       "type": "STRING",
       "value": "VIRTUAL"
     },
+    "_command_modifier": {
+      "type": "CHOICE",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "modifier_accessor"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "modifier_catchall"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "modifier_disabled"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "modifier_error_response"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "modifier_hazardous"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "modifier_hidden"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "modifier_meta"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "modifier_related_item"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "modifier_response"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "modifier_restricted"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "modifier_screen"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "modifier_subpacketizer"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "modifier_template"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "modifier_validator"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "modifier_virtual"
+        }
+      ]
+    },
+    "_parameter_modifier": {
+      "type": "CHOICE",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "modifier_default_value"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "modifier_description"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "modifier_format_string"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "modifier_key"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "modifier_maximum_value"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "modifier_meta"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "modifier_minimum_value"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "modifier_obfuscate"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "modifier_overflow"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "modifier_overlap"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "modifier_required"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "modifier_state"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "modifier_units"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "modifier_variable_bit_size"
+        }
+      ]
+    },
     "command": {
       "type": "SEQ",
       "members": [
@@ -750,71 +901,6 @@
               "type": "BLANK"
             }
           ]
-        }
-      ]
-    },
-    "_command_modifier": {
-      "type": "CHOICE",
-      "members": [
-        {
-          "type": "SYMBOL",
-          "name": "modifier_accessor"
-        },
-        {
-          "type": "SYMBOL",
-          "name": "modifier_catchall"
-        },
-        {
-          "type": "SYMBOL",
-          "name": "modifier_disabled"
-        },
-        {
-          "type": "SYMBOL",
-          "name": "modifier_error_response"
-        },
-        {
-          "type": "SYMBOL",
-          "name": "modifier_hazardous"
-        },
-        {
-          "type": "SYMBOL",
-          "name": "modifier_hidden"
-        },
-        {
-          "type": "SYMBOL",
-          "name": "modifier_meta"
-        },
-        {
-          "type": "SYMBOL",
-          "name": "modifier_related_item"
-        },
-        {
-          "type": "SYMBOL",
-          "name": "modifier_response"
-        },
-        {
-          "type": "SYMBOL",
-          "name": "modifier_restricted"
-        },
-        {
-          "type": "SYMBOL",
-          "name": "modifier_screen"
-        },
-        {
-          "type": "SYMBOL",
-          "name": "modifier_subpacketizer"
-        },
-        {
-          "type": "SYMBOL",
-          "name": "modifier_template"
-        },
-        {
-          "type": "SYMBOL",
-          "name": "modifier_validator"
-        },
-        {
-          "type": "SYMBOL",
-          "name": "modifier_virtual"
         }
       ]
     },
@@ -921,67 +1007,6 @@
           }
         ]
       }
-    },
-    "_parameter_modifier": {
-      "type": "CHOICE",
-      "members": [
-        {
-          "type": "SYMBOL",
-          "name": "modifier_default_value"
-        },
-        {
-          "type": "SYMBOL",
-          "name": "modifier_description"
-        },
-        {
-          "type": "SYMBOL",
-          "name": "modifier_format_string"
-        },
-        {
-          "type": "SYMBOL",
-          "name": "modifier_key"
-        },
-        {
-          "type": "SYMBOL",
-          "name": "modifier_maximum_value"
-        },
-        {
-          "type": "SYMBOL",
-          "name": "modifier_meta"
-        },
-        {
-          "type": "SYMBOL",
-          "name": "modifier_minimum_value"
-        },
-        {
-          "type": "SYMBOL",
-          "name": "modifier_obfuscate"
-        },
-        {
-          "type": "SYMBOL",
-          "name": "modifier_overflow"
-        },
-        {
-          "type": "SYMBOL",
-          "name": "modifier_overlap"
-        },
-        {
-          "type": "SYMBOL",
-          "name": "modifier_required"
-        },
-        {
-          "type": "SYMBOL",
-          "name": "modifier_state"
-        },
-        {
-          "type": "SYMBOL",
-          "name": "modifier_units"
-        },
-        {
-          "type": "SYMBOL",
-          "name": "modifier_variable_bit_size"
-        }
-      ]
     },
     "parameter_definition": {
       "type": "SEQ",
@@ -1214,7 +1239,7 @@
       "members": [
         {
           "type": "STRING",
-          "value": "ID_PARAMETER"
+          "value": "APPEND_ID_PARAMETER"
         },
         {
           "type": "FIELD",
@@ -1361,7 +1386,7 @@
       "members": [
         {
           "type": "STRING",
-          "value": "ARRAY_PARAMETER"
+          "value": "APPEND_ARRAY_PARAMETER"
         },
         {
           "type": "FIELD",
@@ -1524,6 +1549,14 @@
     "_hexadecimal_number": {
       "type": "PATTERN",
       "value": "0[xX][0-9a-fA-F]+"
+    },
+    "_octal_number": {
+      "type": "PATTERN",
+      "value": "0[0-7]\\+"
+    },
+    "_binary_number": {
+      "type": "PATTERN",
+      "value": "0b[01]\\+"
     },
     "_description": {
       "type": "FIELD",

@@ -1353,6 +1353,14 @@
     "named": false
   },
   {
+    "type": "APPEND_ARRAY_PARAMETER",
+    "named": false
+  },
+  {
+    "type": "APPEND_ID_PARAMETER",
+    "named": false
+  },
+  {
     "type": "APPEND_PARAMETER",
     "named": false
   },
