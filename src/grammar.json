@@ -579,7 +579,7 @@
               "members": [
                 {
                   "type": "SYMBOL",
-                  "name": "modifier_state_disable_message"
+                  "name": "modifier_disable_messages"
                 },
                 {
                   "type": "SEQ",
@@ -611,7 +611,7 @@
         }
       ]
     },
-    "modifier_state_disable_message": {
+    "modifier_disable_messages": {
       "type": "STRING",
       "value": "DISABLE_MESSAGES"
     },
@@ -704,6 +704,32 @@
         {
           "type": "STRING",
           "value": "TEMPLATE"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "string"
+        }
+      ]
+    },
+    "modifier_template_base64": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "TEMPLATE_BASE64"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "string"
+        }
+      ]
+    },
+    "modifier_template_file": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "TEMPLATE_FILE"
         },
         {
           "type": "SYMBOL",
@@ -1195,6 +1221,10 @@
         },
         {
           "type": "SYMBOL",
+          "name": "modifier_disable_messages"
+        },
+        {
+          "type": "SYMBOL",
           "name": "modifier_disabled"
         },
         {
@@ -1212,6 +1242,10 @@
         {
           "type": "SYMBOL",
           "name": "modifier_meta"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "modifier_obfuscate"
         },
         {
           "type": "SYMBOL",
@@ -1236,6 +1270,14 @@
         {
           "type": "SYMBOL",
           "name": "modifier_template"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "modifier_template_base64"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "modifier_template_file"
         },
         {
           "type": "SYMBOL",
@@ -1528,13 +1570,21 @@
           "name": "select_command_definition"
         },
         {
+          "type": "SYMBOL",
+          "name": "_newline"
+        },
+        {
           "type": "REPEAT",
           "content": {
             "type": "CHOICE",
             "members": [
               {
                 "type": "SYMBOL",
-                "name": "delete_parameter"
+                "name": "_command_modifier"
+              },
+              {
+                "type": "SYMBOL",
+                "name": "parameter"
               }
             ]
           }
@@ -1598,6 +1648,22 @@
               {
                 "type": "SYMBOL",
                 "name": "parameter_definition"
+              },
+              {
+                "type": "SYMBOL",
+                "name": "structure_definition"
+              },
+              {
+                "type": "SYMBOL",
+                "name": "append_structure_definition"
+              },
+              {
+                "type": "SYMBOL",
+                "name": "select_parameter_definition"
+              },
+              {
+                "type": "SYMBOL",
+                "name": "delete_parameter"
               }
             ]
           },
@@ -2063,6 +2129,77 @@
               "type": "BLANK"
             }
           ]
+        }
+      ]
+    },
+    "select_parameter_definition": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "SELECT_PARAMETER"
+        },
+        {
+          "type": "FIELD",
+          "name": "name",
+          "content": {
+            "type": "SYMBOL",
+            "name": "identifier"
+          }
+        }
+      ]
+    },
+    "structure_definition": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "STRUCTURE"
+        },
+        {
+          "type": "FIELD",
+          "name": "name",
+          "content": {
+            "type": "SYMBOL",
+            "name": "identifier"
+          }
+        },
+        {
+          "type": "FIELD",
+          "name": "endianness",
+          "content": {
+            "type": "SYMBOL",
+            "name": "endianness"
+          }
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "_description"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    "append_structure_definition": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "APPEND_STRUCTURE"
+        },
+        {
+          "type": "FIELD",
+          "name": "name",
+          "content": {
+            "type": "SYMBOL",
+            "name": "identifier"
+          }
         }
       ]
     },

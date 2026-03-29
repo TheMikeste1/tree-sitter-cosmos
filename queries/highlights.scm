@@ -6,12 +6,15 @@
 "SELECT_COMMAND" @keyword
 "TELEMETRY" @keyword
 "SELECT_TELEMETRY" @keyword
+"STRUCTURE" @keyword
+"APPEND_STRUCTURE" @keyword
 "PARAMETER" @keyword
 "APPEND_PARAMETER" @keyword
 "ID_PARAMETER" @keyword
 "APPEND_ID_PARAMETER" @keyword
 "ARRAY_PARAMETER" @keyword
 "APPEND_ARRAY_PARAMETER" @keyword
+"SELECT_PARAMETER" @keyword
 "DELETE_PARAMETER" @keyword
 "ITEM" @keyword
 "APPEND_ITEM" @keyword
@@ -29,6 +32,7 @@
 "CONVERTED_DATA" @keyword
 "DEFAULT_VALUE" @keyword
 "DESCRIPTION" @keyword
+(modifier_disable_messages) @keyword
 (modifier_disabled) @keyword
 "ERROR_RESPONSE" @keyword
 "FORMAT_STRING" @keyword
@@ -45,17 +49,17 @@
 "MINIMUM_VALUE" @keyword
 (modifier_obfuscate) @keyword
 "OVERFLOW" @keyword
-(modifier_overlap) @keyword
-"PROCESSOR" @keyword
+(modifier_overflow) @keyword
 "RELATED_ITEM" @keyword
 (modifier_required) @keyword
 "RESPONSE" @keyword
 (modifier_restricted) @keyword
 "SCREEN" @keyword
 "STATE" @keyword
-(modifier_state_disable_message) @keyword
 "SUBPACKETIZER" @keyword
 "TEMPLATE" @keyword
+"TEMPLATE_BASE64" @keyword
+"TEMPLATE_FILE" @keyword
 "UNITS" @keyword
 "VALIDATOR" @keyword
 "VARIABLE_BIT_SIZE" @keyword
@@ -108,12 +112,15 @@
 (telemetry_definition name: (identifier) @function)
 (select_telemetry_definition target: (identifier) @type)
 (select_telemetry_definition name: (identifier) @function)
+(structure_definition name: (identifier) @type)
+(append_structure_definition name: (identifier) @type)
 (parameter_definition name: (identifier) @variable.parameter)
 (append_parameter_definition name: (identifier) @variable.parameter)
 (id_parameter_definition name: (identifier) @variable.parameter)
 (append_id_parameter_definition name: (identifier) @variable.parameter)
 (array_parameter_definition name: (identifier) @variable.parameter)
 (append_array_parameter_definition name: (identifier) @variable.parameter)
+(select_parameter_definition name: (identifier) @variable.parameter)
 (delete_parameter name: (identifier) @variable.parameter)
 (item_definition name: (identifier) @variable.parameter)
 (append_item_definition name: (identifier) @variable.parameter)
@@ -140,6 +147,8 @@
 (modifier_screen target: (identifier) @type screen: (identifier) @variable.member)
 (modifier_state name: (identifier) @variable.member)
 (modifier_subpacketizer class: (identifier) @type)
+(modifier_units full_name: (string) @string abbreviated: (string) @string)
+(modifier_validator class: (filename) @string argument: (string) @string)
 (modifier_variable_bit_size length_field: (identifier) @variable.parameter)
 
 ; Conversion fields

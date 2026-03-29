@@ -105,12 +105,12 @@ export default grammar({
         field("value", $.number),
         optional(
           choice(
-            $.modifier_state_disable_message,
+            $.modifier_disable_messages,
             seq($.modifier_hazardous, optional($._description)),
           ),
         ),
       ),
-    modifier_state_disable_message: (_) => "DISABLE_MESSAGES",
+    modifier_disable_messages: (_) => "DISABLE_MESSAGES",
     modifier_subpacketizer: ($) =>
       seq(
         "SUBPACKETIZER",
@@ -128,6 +128,8 @@ export default grammar({
         field("argument", $.string),
       ),
     modifier_template: ($) => seq("TEMPLATE", $.string),
+    modifier_template_base64: ($) => seq("TEMPLATE_BASE64", $.string),
+    modifier_template_file: ($) => seq("TEMPLATE_FILE", $.string),
     modifier_limits: ($) =>
       seq(
         "LIMITS",
@@ -225,17 +227,21 @@ export default grammar({
       choice(
         $.modifier_accessor,
         $.modifier_catchall,
+        $.modifier_disable_messages,
         $.modifier_disabled,
         $.modifier_error_response,
         $.modifier_hazardous,
         $.modifier_hidden,
         $.modifier_meta,
+        $.modifier_obfuscate,
         $.modifier_related_item,
         $.modifier_response,
         $.modifier_restricted,
         $.modifier_screen,
         $.modifier_subpacketizer,
         $.modifier_template,
+        $.modifier_template_base64,
+        $.modifier_template_file,
         $.modifier_validator,
         $.modifier_virtual,
       ),
@@ -311,7 +317,11 @@ export default grammar({
       ),
 
     select_command: ($) =>
-      seq($.select_command_definition, repeat(choice($.delete_parameter))),
+      seq(
+        $.select_command_definition,
+        $._newline,
+        repeat(choice($._command_modifier, $.parameter)),
+      ),
     select_command_definition: ($) =>
       seq(
         "SELECT_COMMAND",
@@ -329,6 +339,10 @@ export default grammar({
             $.array_parameter_definition,
             $.id_parameter_definition,
             $.parameter_definition,
+            $.structure_definition,
+            $.append_structure_definition,
+            $.select_parameter_definition,
+            $.delete_parameter,
           ),
           repeat(seq($._newline, $._parameter_modifier)),
           $._newline,
@@ -393,6 +407,19 @@ export default grammar({
         optional($._description),
         optional(field("endianness", $.endianness)),
       ),
+
+    select_parameter_definition: ($) =>
+      seq("SELECT_PARAMETER", field("name", $.identifier)),
+
+    structure_definition: ($) =>
+      seq(
+        "STRUCTURE",
+        field("name", $.identifier),
+        field("endianness", $.endianness),
+        optional($._description),
+      ),
+    append_structure_definition: ($) =>
+      seq("APPEND_STRUCTURE", field("name", $.identifier)),
 
     delete_parameter: ($) =>
       seq("DELETE_PARAMETER", field("name", $.identifier)),

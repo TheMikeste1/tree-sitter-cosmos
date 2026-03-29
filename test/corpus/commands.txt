@@ -27,6 +27,35 @@ SELECT_COMMAND INST CMD
       name: (identifier))))
 
 =================
+Select Command Modifiers
+=================
+SELECT_COMMAND INST CMD
+  DISABLE_MESSAGES
+  TEMPLATE_FILE "template.bin"
+  TEMPLATE_BASE64 "deadbeef"
+  SELECT_PARAMETER PARAM1
+    MINIMUM_VALUE 0
+  DELETE_PARAMETER PARAM2
+
+---
+
+(source_file
+  (select_command
+    (select_command_definition
+      target: (identifier)
+      name: (identifier))
+    (modifier_disable_messages)
+    (modifier_template_file (string))
+    (modifier_template_base64 (string))
+    (parameter
+      (select_parameter_definition
+        name: (identifier))
+      (modifier_minimum_value (number)))
+    (parameter
+      (delete_parameter
+        name: (identifier)))))
+
+=================
 Parameter Definition
 =================
 COMMAND INST CMD BIG_ENDIAN
@@ -124,58 +153,6 @@ COMMAND INST CMD BIG_ENDIAN
           endianness: (endianness)))))
 
 =================
-Structure Definition
-:skip
-=================
-STRUCTURE CCSDS_HEADER BIG_ENDIAN "Standard CCSDS Header"
-  PARAMETER VERSION 0 3 UINT 0 0 0 "Version"
-  PARAMETER TYPE    3 1 UINT 0 0 0 "Type"
-
----
-
-(source_file
-  (structure_definition
-    name: (identifier)
-    endianness: (endianness))
-    description: (string)
-    (parameter_definition
-      name: (identifier)
-      bit_offset: (number)
-      bit_size: (number)
-      data_type: (number_dtype)
-      min: (number)
-      max: (number)
-      default: (number)
-      description: (string))
-    (parameter_definition
-      name: (identifier)
-      bit_offset: (number)
-      bit_size: (number)
-      data_type: (number_dtype)
-      min: (number)
-      max: (number)
-      default: (number)
-      description: (string))))
-
-=================
-Append Structure
-:skip
-=================
-COMMAND INST CMD BIG_ENDIAN
-  APPEND_STRUCTURE CCSDS_HEADER
-
----
-
-(source_file
-  (command
-    (command_definition
-      target: (identifier)
-      name: (identifier)
-      endianness: (endianness))
-      (append_structure_definition
-        name: (identifier)))))
-
-=================
 Delete Parameter
 =================
 SELECT_COMMAND INST CMD
@@ -188,5 +165,6 @@ SELECT_COMMAND INST CMD
     (select_command_definition
         target: (identifier)
         name: (identifier))
-    (delete_parameter
-      name: (identifier))))
+    (parameter
+      (delete_parameter
+        name: (identifier)))))

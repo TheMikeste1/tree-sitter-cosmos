@@ -1,0 +1,37 @@
+=================
+Structure Definition
+=================
+COMMAND INST CMD BIG_ENDIAN
+  STRUCTURE CCSDS_HEADER BIG_ENDIAN "Standard Header"
+
+---
+
+(source_file
+  (command
+    (command_definition
+      target: (identifier)
+      name: (identifier)
+      endianness: (endianness))
+    (parameter
+      (structure_definition
+        name: (identifier)
+        endianness: (endianness)
+        description: (string)))))
+
+=================
+Append Structure
+=================
+COMMAND INST CMD BIG_ENDIAN
+  APPEND_STRUCTURE CCSDS_HEADER
+
+---
+
+(source_file
+  (command
+    (command_definition
+      target: (identifier)
+      name: (identifier)
+      endianness: (endianness))
+    (parameter
+      (append_structure_definition
+        name: (identifier)))))
