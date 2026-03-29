@@ -155,12 +155,64 @@
       "type": "CHOICE",
       "members": [
         {
-          "type": "PATTERN",
-          "value": "\"(\\\\\"|[^\"])+\""
+          "type": "SEQ",
+          "members": [
+            {
+              "type": "PATTERN",
+              "value": "\"(\\\\\"|[^\"])+\""
+            },
+            {
+              "type": "CHOICE",
+              "members": [
+                {
+                  "type": "SEQ",
+                  "members": [
+                    {
+                      "type": "STRING",
+                      "value": "+"
+                    },
+                    {
+                      "type": "PATTERN",
+                      "value": "\"(\\\\\"|[^\"])+\""
+                    }
+                  ]
+                },
+                {
+                  "type": "BLANK"
+                }
+              ]
+            }
+          ]
         },
         {
-          "type": "PATTERN",
-          "value": "'(\\\\'|[^'])+'"
+          "type": "SEQ",
+          "members": [
+            {
+              "type": "PATTERN",
+              "value": "'(\\\\'|[^'])+'"
+            },
+            {
+              "type": "CHOICE",
+              "members": [
+                {
+                  "type": "SEQ",
+                  "members": [
+                    {
+                      "type": "STRING",
+                      "value": "+"
+                    },
+                    {
+                      "type": "PATTERN",
+                      "value": "'(\\\\'|[^'])+'"
+                    }
+                  ]
+                },
+                {
+                  "type": "BLANK"
+                }
+              ]
+            }
+          ]
         }
       ]
     },
@@ -830,6 +882,71 @@
         }
       ]
     },
+    "_telemetry_modifier": {
+      "type": "CHOICE",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "modifier_accessor"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "modifier_catchall"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "modifier_disabled"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "modifier_error_response"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "modifier_hazardous"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "modifier_hidden"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "modifier_meta"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "modifier_related_item"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "modifier_response"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "modifier_restricted"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "modifier_screen"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "modifier_subpacketizer"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "modifier_template"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "modifier_validator"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "modifier_virtual"
+        }
+      ]
+    },
     "command": {
       "type": "SEQ",
       "members": [
@@ -1467,6 +1584,64 @@
         }
       ]
     },
+    "telemetry": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "telemetry_definition"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "_newline"
+        }
+      ]
+    },
+    "telemetry_definition": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "TELEMETRY"
+        },
+        {
+          "type": "FIELD",
+          "name": "target",
+          "content": {
+            "type": "SYMBOL",
+            "name": "identifier"
+          }
+        },
+        {
+          "type": "FIELD",
+          "name": "name",
+          "content": {
+            "type": "SYMBOL",
+            "name": "identifier"
+          }
+        },
+        {
+          "type": "FIELD",
+          "name": "endianness",
+          "content": {
+            "type": "SYMBOL",
+            "name": "endianness"
+          }
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "_description"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
     "_number_parameter": {
       "type": "SEQ",
       "members": [
@@ -1552,11 +1727,11 @@
     },
     "_octal_number": {
       "type": "PATTERN",
-      "value": "0[0-7]\\+"
+      "value": "0[0-7]+"
     },
     "_binary_number": {
       "type": "PATTERN",
-      "value": "0b[01]\\+"
+      "value": "0b[01]+"
     },
     "_description": {
       "type": "FIELD",

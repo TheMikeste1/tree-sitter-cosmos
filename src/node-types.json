@@ -1349,6 +1349,10 @@
     "fields": {}
   },
   {
+    "type": "+",
+    "named": false
+  },
+  {
     "type": "ACCESSOR",
     "named": false
   },

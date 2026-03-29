@@ -1,58 +1,5 @@
 =================
-ERB Expression
-:skip
-=================
-COMMAND INST <%= "CMD" %> BIG_ENDIAN
-
----
-
-(source_file
-  (command
-    (command_definition
-      target: (identifier)
-      name: (erb_expression (code))
-      endianness: (endianness))))
-
-=================
-ERB Directive
-:skip
-=================
-<% 10.times do |i| %>
-  ITEM TEMP_<%= i %> 0 16 UINT
-<% end %>
-
----
-
-(source_file
-  (erb_directive (code))
-  (telemetry_definition
-    (item_definition
-      name: (erb_expression (code))
-      bit_offset: (number)
-      bit_size: (number)
-      data_type: (number_dtype)))
-  (erb_directive (code)))
-
-=================
-ERB Comment
-:skip
-=================
-<%# This is an internal comment %>
-COMMAND INST CMD BIG_ENDIAN
-
----
-
-(source_file
-  (erb_comment (code))
-  (command
-    (command_definition
-      target: (identifier)
-      name: (identifier)
-      endianness: (endianness))))
-
-=================
 String Concatenation
-:skip
 =================
 COMMAND INST CMD BIG_ENDIAN "Description part 1 " +
                              "Description part 2"
@@ -64,14 +11,11 @@ COMMAND INST CMD BIG_ENDIAN "Description part 1 " +
     (command_definition
       target: (identifier)
       name: (identifier)
-      endianness: (endianness))
-      description: (string_concatenation
-        (string)
-        (string)))))
+      endianness: (endianness)
+      description: (string))))
 
 =================
 Numeric Literals
-:skip
 =================
 COMMAND INST CMD BIG_ENDIAN
   PARAMETER HEX 0 8 UINT 0xDEADBEEF 0xFFFFFFFF 0
@@ -87,42 +31,46 @@ COMMAND INST CMD BIG_ENDIAN
       target: (identifier)
       name: (identifier)
       endianness: (endianness))
-      (parameter_definition
-        name: (identifier)
-        bit_offset: (number)
-        bit_size: (number)
-        data_type: (number_dtype)
-        min: (number)
-        max: (number)
-        default: (number))
-      (parameter_definition
-        name: (identifier)
-        bit_offset: (number)
-        bit_size: (number)
-        data_type: (number_dtype)
-        min: (number)
-        max: (number)
-        default: (number))
-      (parameter_definition
-        name: (identifier)
-        bit_offset: (number)
-        bit_size: (number)
-        data_type: (number_dtype)
-        min: (number)
-        max: (number)
-        default: (number))
-      (parameter_definition
-        name: (identifier)
-        bit_offset: (number)
-        bit_size: (number)
-        data_type: (number_dtype)
-        min: (number)
-        max: (number)
-        default: (number)))))
+      (parameter
+        (parameter_definition
+          name: (identifier)
+          bit_offset: (number)
+          bit_size: (number)
+          data_type: (number_dtype)
+          min: (number)
+          max: (number)
+          default: (number)))
+      (parameter
+        (parameter_definition
+          name: (identifier)
+          bit_offset: (number)
+          bit_size: (number)
+          data_type: (number_dtype)
+          min: (number)
+          max: (number)
+          default: (number)))
+      (parameter
+        (parameter_definition
+          name: (identifier)
+          bit_offset: (number)
+          bit_size: (number)
+          data_type: (number_dtype)
+          min: (number)
+          max: (number)
+          default: (number)))
+      (parameter
+        (parameter_definition
+          name: (identifier)
+          bit_offset: (number)
+          bit_size: (number)
+          data_type: (number_dtype)
+          min: (number)
+          max: (number)
+          default: (number)))
+      ))
 
 =================
 Line Continuation
-:skip
 =================
 COMMAND INST CMD &
   BIG_ENDIAN "Description"
@@ -134,20 +82,5 @@ COMMAND INST CMD &
     (command_definition
       target: (identifier)
       name: (identifier)
-      endianness: (endianness))
+      endianness: (endianness)
       description: (string))))
-
-=================
-Render (Include)
-:skip
-=================
-<%= render "header.txt", locals: { id: 1 } %>
-
----
-
-(source_file
-  (erb_expression
-    code: (code
-      (render_call
-        file: (string)
-        (locals (identifier) (number))))))

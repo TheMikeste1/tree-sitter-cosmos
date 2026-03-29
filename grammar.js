@@ -31,7 +31,11 @@ export default grammar({
         "MAX",
         "MIN",
       ),
-    string: (_) => choice(/"(\\"|[^"])+"/, /'(\\'|[^'])+'/),
+    string: (_) =>
+      choice(
+        seq(/"(\\"|[^"])+"/, optional(seq("+", /"(\\"|[^"])+"/))),
+        seq(/'(\\'|[^'])+'/, optional(seq("+", /'(\\'|[^'])+'/))),
+      ),
 
     modifier_accessor: ($) =>
       seq(
@@ -282,8 +286,8 @@ export default grammar({
     _block_parameter: ($) =>
       seq(field("data_type", "BLOCK"), field("default", $._hexadecimal_number)),
     _hexadecimal_number: (_) => /0[xX][0-9a-fA-F]+/,
-    _octal_number: (_) => /0[0-7]\+/,
-    _binary_number: (_) => /0b[01]\+/,
+    _octal_number: (_) => /0[0-7]+/,
+    _binary_number: (_) => /0b[01]+/,
     _description: ($) => field("description", $.string),
     _newline: (_) => /\r?\n/,
     _line_continuation: (_) => token(seq("&", /\r?\n/)),

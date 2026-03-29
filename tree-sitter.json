@@ -11,7 +11,8 @@
         "cosmos-plugin"
       ],
       "injection-regex": "^cosmos$",
-      "class-name": "TreeSitterCOSMOS"
+      "class-name": "TreeSitterCOSMOS",
+      "highlights": "queries/highlights.scm"
     }
   ],
   "metadata": {
