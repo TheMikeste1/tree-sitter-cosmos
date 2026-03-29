@@ -6,7 +6,7 @@ COMMAND INST CMD BIG_ENDIAN
 
 ---
 
-(source_file
+(definition_file
   (command
     (command_definition
       target: (identifier)
@@ -26,7 +26,7 @@ COMMAND INST CMD BIG_ENDIAN
 
 ---
 
-(source_file
+(definition_file
   (command
     (command_definition
       target: (identifier)

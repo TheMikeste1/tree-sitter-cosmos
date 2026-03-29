@@ -1,22 +1,284 @@
 [
   {
-    "type": "block",
+    "type": "command_modifier",
     "named": true,
     "subtypes": [
       {
-        "type": "command",
+        "type": "modifier_accessor",
         "named": true
       },
       {
-        "type": "select_command",
+        "type": "modifier_catchall",
         "named": true
       },
       {
-        "type": "select_telemetry",
+        "type": "modifier_disable_messages",
         "named": true
       },
       {
-        "type": "telemetry",
+        "type": "modifier_disabled",
+        "named": true
+      },
+      {
+        "type": "modifier_error_response",
+        "named": true
+      },
+      {
+        "type": "modifier_hazardous",
+        "named": true
+      },
+      {
+        "type": "modifier_hidden",
+        "named": true
+      },
+      {
+        "type": "modifier_meta",
+        "named": true
+      },
+      {
+        "type": "modifier_obfuscate",
+        "named": true
+      },
+      {
+        "type": "modifier_related_item",
+        "named": true
+      },
+      {
+        "type": "modifier_response",
+        "named": true
+      },
+      {
+        "type": "modifier_restricted",
+        "named": true
+      },
+      {
+        "type": "modifier_screen",
+        "named": true
+      },
+      {
+        "type": "modifier_subpacketizer",
+        "named": true
+      },
+      {
+        "type": "modifier_template",
+        "named": true
+      },
+      {
+        "type": "modifier_template_base64",
+        "named": true
+      },
+      {
+        "type": "modifier_template_file",
+        "named": true
+      },
+      {
+        "type": "modifier_validator",
+        "named": true
+      },
+      {
+        "type": "modifier_virtual",
+        "named": true
+      }
+    ]
+  },
+  {
+    "type": "item_modifier",
+    "named": true,
+    "subtypes": [
+      {
+        "type": "conversion_generic_read",
+        "named": true
+      },
+      {
+        "type": "conversion_poly_read",
+        "named": true
+      },
+      {
+        "type": "conversion_read",
+        "named": true
+      },
+      {
+        "type": "conversion_seg_poly_read",
+        "named": true
+      },
+      {
+        "type": "modifier_converted_data",
+        "named": true
+      },
+      {
+        "type": "modifier_limits",
+        "named": true
+      },
+      {
+        "type": "modifier_limits_response",
+        "named": true
+      },
+      {
+        "type": "parameter_modifier",
+        "named": true
+      }
+    ]
+  },
+  {
+    "type": "parameter_modifier",
+    "named": true,
+    "subtypes": [
+      {
+        "type": "conversion_generic_write",
+        "named": true
+      },
+      {
+        "type": "conversion_poly_write",
+        "named": true
+      },
+      {
+        "type": "conversion_write",
+        "named": true
+      },
+      {
+        "type": "modifier_default_value",
+        "named": true
+      },
+      {
+        "type": "modifier_description",
+        "named": true
+      },
+      {
+        "type": "modifier_format_string",
+        "named": true
+      },
+      {
+        "type": "modifier_hidden",
+        "named": true
+      },
+      {
+        "type": "modifier_key",
+        "named": true
+      },
+      {
+        "type": "modifier_maximum_value",
+        "named": true
+      },
+      {
+        "type": "modifier_meta",
+        "named": true
+      },
+      {
+        "type": "modifier_minimum_value",
+        "named": true
+      },
+      {
+        "type": "modifier_obfuscate",
+        "named": true
+      },
+      {
+        "type": "modifier_overflow",
+        "named": true
+      },
+      {
+        "type": "modifier_overlap",
+        "named": true
+      },
+      {
+        "type": "modifier_required",
+        "named": true
+      },
+      {
+        "type": "modifier_state",
+        "named": true
+      },
+      {
+        "type": "modifier_units",
+        "named": true
+      },
+      {
+        "type": "modifier_variable_bit_size",
+        "named": true
+      }
+    ]
+  },
+  {
+    "type": "telemetry_modifier",
+    "named": true,
+    "subtypes": [
+      {
+        "type": "modifier_accessor",
+        "named": true
+      },
+      {
+        "type": "modifier_allow_short",
+        "named": true
+      },
+      {
+        "type": "modifier_catchall",
+        "named": true
+      },
+      {
+        "type": "modifier_disabled",
+        "named": true
+      },
+      {
+        "type": "modifier_error_response",
+        "named": true
+      },
+      {
+        "type": "modifier_hazardous",
+        "named": true
+      },
+      {
+        "type": "modifier_hidden",
+        "named": true
+      },
+      {
+        "type": "modifier_ignore_overlap",
+        "named": true
+      },
+      {
+        "type": "modifier_limits_group",
+        "named": true
+      },
+      {
+        "type": "modifier_limits_group_item",
+        "named": true
+      },
+      {
+        "type": "modifier_meta",
+        "named": true
+      },
+      {
+        "type": "modifier_processor",
+        "named": true
+      },
+      {
+        "type": "modifier_related_item",
+        "named": true
+      },
+      {
+        "type": "modifier_response",
+        "named": true
+      },
+      {
+        "type": "modifier_restricted",
+        "named": true
+      },
+      {
+        "type": "modifier_screen",
+        "named": true
+      },
+      {
+        "type": "modifier_subpacketizer",
+        "named": true
+      },
+      {
+        "type": "modifier_template",
+        "named": true
+      },
+      {
+        "type": "modifier_validator",
+        "named": true
+      },
+      {
+        "type": "modifier_virtual",
         "named": true
       }
     ]
@@ -652,79 +914,7 @@
           "named": true
         },
         {
-          "type": "modifier_accessor",
-          "named": true
-        },
-        {
-          "type": "modifier_catchall",
-          "named": true
-        },
-        {
-          "type": "modifier_disable_messages",
-          "named": true
-        },
-        {
-          "type": "modifier_disabled",
-          "named": true
-        },
-        {
-          "type": "modifier_error_response",
-          "named": true
-        },
-        {
-          "type": "modifier_hazardous",
-          "named": true
-        },
-        {
-          "type": "modifier_hidden",
-          "named": true
-        },
-        {
-          "type": "modifier_meta",
-          "named": true
-        },
-        {
-          "type": "modifier_obfuscate",
-          "named": true
-        },
-        {
-          "type": "modifier_related_item",
-          "named": true
-        },
-        {
-          "type": "modifier_response",
-          "named": true
-        },
-        {
-          "type": "modifier_restricted",
-          "named": true
-        },
-        {
-          "type": "modifier_screen",
-          "named": true
-        },
-        {
-          "type": "modifier_subpacketizer",
-          "named": true
-        },
-        {
-          "type": "modifier_template",
-          "named": true
-        },
-        {
-          "type": "modifier_template_base64",
-          "named": true
-        },
-        {
-          "type": "modifier_template_file",
-          "named": true
-        },
-        {
-          "type": "modifier_validator",
-          "named": true
-        },
-        {
-          "type": "modifier_virtual",
+          "type": "command_modifier",
           "named": true
         },
         {
@@ -905,6 +1095,34 @@
           }
         ]
       }
+    }
+  },
+  {
+    "type": "definition_file",
+    "named": true,
+    "root": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "command",
+          "named": true
+        },
+        {
+          "type": "select_command",
+          "named": true
+        },
+        {
+          "type": "select_telemetry",
+          "named": true
+        },
+        {
+          "type": "telemetry",
+          "named": true
+        }
+      ]
     }
   },
   {
@@ -1158,34 +1376,6 @@
           "named": true
         },
         {
-          "type": "conversion_generic_read",
-          "named": true
-        },
-        {
-          "type": "conversion_generic_write",
-          "named": true
-        },
-        {
-          "type": "conversion_poly_read",
-          "named": true
-        },
-        {
-          "type": "conversion_poly_write",
-          "named": true
-        },
-        {
-          "type": "conversion_read",
-          "named": true
-        },
-        {
-          "type": "conversion_seg_poly_read",
-          "named": true
-        },
-        {
-          "type": "conversion_write",
-          "named": true
-        },
-        {
           "type": "delete_item_definition",
           "named": true
         },
@@ -1198,75 +1388,7 @@
           "named": true
         },
         {
-          "type": "modifier_converted_data",
-          "named": true
-        },
-        {
-          "type": "modifier_default_value",
-          "named": true
-        },
-        {
-          "type": "modifier_description",
-          "named": true
-        },
-        {
-          "type": "modifier_format_string",
-          "named": true
-        },
-        {
-          "type": "modifier_hidden",
-          "named": true
-        },
-        {
-          "type": "modifier_key",
-          "named": true
-        },
-        {
-          "type": "modifier_limits",
-          "named": true
-        },
-        {
-          "type": "modifier_limits_response",
-          "named": true
-        },
-        {
-          "type": "modifier_maximum_value",
-          "named": true
-        },
-        {
-          "type": "modifier_meta",
-          "named": true
-        },
-        {
-          "type": "modifier_minimum_value",
-          "named": true
-        },
-        {
-          "type": "modifier_obfuscate",
-          "named": true
-        },
-        {
-          "type": "modifier_overflow",
-          "named": true
-        },
-        {
-          "type": "modifier_overlap",
-          "named": true
-        },
-        {
-          "type": "modifier_required",
-          "named": true
-        },
-        {
-          "type": "modifier_state",
-          "named": true
-        },
-        {
-          "type": "modifier_units",
-          "named": true
-        },
-        {
-          "type": "modifier_variable_bit_size",
+          "type": "item_modifier",
           "named": true
         },
         {
@@ -2099,18 +2221,6 @@
           "named": true
         },
         {
-          "type": "conversion_generic_write",
-          "named": true
-        },
-        {
-          "type": "conversion_poly_write",
-          "named": true
-        },
-        {
-          "type": "conversion_write",
-          "named": true
-        },
-        {
           "type": "delete_parameter",
           "named": true
         },
@@ -2119,67 +2229,11 @@
           "named": true
         },
         {
-          "type": "modifier_default_value",
-          "named": true
-        },
-        {
-          "type": "modifier_description",
-          "named": true
-        },
-        {
-          "type": "modifier_format_string",
-          "named": true
-        },
-        {
-          "type": "modifier_hidden",
-          "named": true
-        },
-        {
-          "type": "modifier_key",
-          "named": true
-        },
-        {
-          "type": "modifier_maximum_value",
-          "named": true
-        },
-        {
-          "type": "modifier_meta",
-          "named": true
-        },
-        {
-          "type": "modifier_minimum_value",
-          "named": true
-        },
-        {
-          "type": "modifier_obfuscate",
-          "named": true
-        },
-        {
-          "type": "modifier_overflow",
-          "named": true
-        },
-        {
-          "type": "modifier_overlap",
-          "named": true
-        },
-        {
-          "type": "modifier_required",
-          "named": true
-        },
-        {
-          "type": "modifier_state",
-          "named": true
-        },
-        {
-          "type": "modifier_units",
-          "named": true
-        },
-        {
-          "type": "modifier_variable_bit_size",
-          "named": true
-        },
-        {
           "type": "parameter_definition",
+          "named": true
+        },
+        {
+          "type": "parameter_modifier",
           "named": true
         },
         {
@@ -2310,79 +2364,7 @@
       "required": true,
       "types": [
         {
-          "type": "modifier_accessor",
-          "named": true
-        },
-        {
-          "type": "modifier_catchall",
-          "named": true
-        },
-        {
-          "type": "modifier_disable_messages",
-          "named": true
-        },
-        {
-          "type": "modifier_disabled",
-          "named": true
-        },
-        {
-          "type": "modifier_error_response",
-          "named": true
-        },
-        {
-          "type": "modifier_hazardous",
-          "named": true
-        },
-        {
-          "type": "modifier_hidden",
-          "named": true
-        },
-        {
-          "type": "modifier_meta",
-          "named": true
-        },
-        {
-          "type": "modifier_obfuscate",
-          "named": true
-        },
-        {
-          "type": "modifier_related_item",
-          "named": true
-        },
-        {
-          "type": "modifier_response",
-          "named": true
-        },
-        {
-          "type": "modifier_restricted",
-          "named": true
-        },
-        {
-          "type": "modifier_screen",
-          "named": true
-        },
-        {
-          "type": "modifier_subpacketizer",
-          "named": true
-        },
-        {
-          "type": "modifier_template",
-          "named": true
-        },
-        {
-          "type": "modifier_template_base64",
-          "named": true
-        },
-        {
-          "type": "modifier_template_file",
-          "named": true
-        },
-        {
-          "type": "modifier_validator",
-          "named": true
-        },
-        {
-          "type": "modifier_virtual",
+          "type": "command_modifier",
           "named": true
         },
         {
@@ -2467,87 +2449,11 @@
           "named": true
         },
         {
-          "type": "modifier_accessor",
-          "named": true
-        },
-        {
-          "type": "modifier_allow_short",
-          "named": true
-        },
-        {
-          "type": "modifier_catchall",
-          "named": true
-        },
-        {
-          "type": "modifier_disabled",
-          "named": true
-        },
-        {
-          "type": "modifier_error_response",
-          "named": true
-        },
-        {
-          "type": "modifier_hazardous",
-          "named": true
-        },
-        {
-          "type": "modifier_hidden",
-          "named": true
-        },
-        {
-          "type": "modifier_ignore_overlap",
-          "named": true
-        },
-        {
-          "type": "modifier_limits_group",
-          "named": true
-        },
-        {
-          "type": "modifier_limits_group_item",
-          "named": true
-        },
-        {
-          "type": "modifier_meta",
-          "named": true
-        },
-        {
-          "type": "modifier_processor",
-          "named": true
-        },
-        {
-          "type": "modifier_related_item",
-          "named": true
-        },
-        {
-          "type": "modifier_response",
-          "named": true
-        },
-        {
-          "type": "modifier_restricted",
-          "named": true
-        },
-        {
-          "type": "modifier_screen",
-          "named": true
-        },
-        {
-          "type": "modifier_subpacketizer",
-          "named": true
-        },
-        {
-          "type": "modifier_template",
-          "named": true
-        },
-        {
-          "type": "modifier_validator",
-          "named": true
-        },
-        {
-          "type": "modifier_virtual",
-          "named": true
-        },
-        {
           "type": "select_telemetry_definition",
+          "named": true
+        },
+        {
+          "type": "telemetry_modifier",
           "named": true
         }
       ]
@@ -2577,22 +2483,6 @@
           }
         ]
       }
-    }
-  },
-  {
-    "type": "source_file",
-    "named": true,
-    "root": true,
-    "fields": {},
-    "children": {
-      "multiple": true,
-      "required": false,
-      "types": [
-        {
-          "type": "block",
-          "named": true
-        }
-      ]
     }
   },
   {
@@ -2649,87 +2539,11 @@
           "named": true
         },
         {
-          "type": "modifier_accessor",
-          "named": true
-        },
-        {
-          "type": "modifier_allow_short",
-          "named": true
-        },
-        {
-          "type": "modifier_catchall",
-          "named": true
-        },
-        {
-          "type": "modifier_disabled",
-          "named": true
-        },
-        {
-          "type": "modifier_error_response",
-          "named": true
-        },
-        {
-          "type": "modifier_hazardous",
-          "named": true
-        },
-        {
-          "type": "modifier_hidden",
-          "named": true
-        },
-        {
-          "type": "modifier_ignore_overlap",
-          "named": true
-        },
-        {
-          "type": "modifier_limits_group",
-          "named": true
-        },
-        {
-          "type": "modifier_limits_group_item",
-          "named": true
-        },
-        {
-          "type": "modifier_meta",
-          "named": true
-        },
-        {
-          "type": "modifier_processor",
-          "named": true
-        },
-        {
-          "type": "modifier_related_item",
-          "named": true
-        },
-        {
-          "type": "modifier_response",
-          "named": true
-        },
-        {
-          "type": "modifier_restricted",
-          "named": true
-        },
-        {
-          "type": "modifier_screen",
-          "named": true
-        },
-        {
-          "type": "modifier_subpacketizer",
-          "named": true
-        },
-        {
-          "type": "modifier_template",
-          "named": true
-        },
-        {
-          "type": "modifier_validator",
-          "named": true
-        },
-        {
-          "type": "modifier_virtual",
-          "named": true
-        },
-        {
           "type": "telemetry_definition",
+          "named": true
+        },
+        {
+          "type": "telemetry_modifier",
           "named": true
         }
       ]

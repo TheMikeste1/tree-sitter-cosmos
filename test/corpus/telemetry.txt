@@ -5,7 +5,7 @@ TELEMETRY INST HEALTH BIG_ENDIAN "Description"
 
 ---
 
-(source_file
+(definition_file
   (telemetry
     (telemetry_definition
       target: (identifier)
@@ -24,7 +24,7 @@ SELECT_TELEMETRY INST HEALTH
 
 ---
 
-(source_file
+(definition_file
   (select_telemetry
     (select_telemetry_definition
       target: (identifier)
@@ -48,7 +48,7 @@ TELEMETRY INST HEALTH BIG_ENDIAN
 
 ---
 
-(source_file
+(definition_file
   (telemetry
     (telemetry_definition
       target: (identifier)
@@ -70,7 +70,7 @@ TELEMETRY INST HEALTH BIG_ENDIAN
 
 ---
 
-(source_file
+(definition_file
   (telemetry
     (telemetry_definition
       target: (identifier)
@@ -92,7 +92,7 @@ TELEMETRY INST HEALTH BIG_ENDIAN
 
 ---
 
-(source_file
+(definition_file
   (telemetry
     (telemetry_definition
       target: (identifier)
@@ -114,7 +114,7 @@ TELEMETRY INST HEALTH BIG_ENDIAN
 
 ---
 
-(source_file
+(definition_file
   (telemetry
     (telemetry_definition
       target: (identifier)
@@ -136,7 +136,7 @@ TELEMETRY INST HEALTH BIG_ENDIAN
 
 ---
 
-(source_file
+(definition_file
   (telemetry
     (telemetry_definition
       target: (identifier)
@@ -159,7 +159,7 @@ TELEMETRY INST HEALTH BIG_ENDIAN
 
 ---
 
-(source_file
+(definition_file
   (telemetry
     (telemetry_definition
       target: (identifier)
@@ -180,7 +180,7 @@ TELEMETRY INST HEALTH BIG_ENDIAN
 
 ---
 
-(source_file
+(definition_file
   (telemetry
     (telemetry_definition
       target: (identifier)
@@ -198,7 +198,7 @@ TELEMETRY INST HEALTH BIG_ENDIAN
 
 ---
 
-(source_file
+(definition_file
   (telemetry
     (telemetry_definition
       target: (identifier)

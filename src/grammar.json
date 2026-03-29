@@ -2,33 +2,29 @@
   "$schema": "https://tree-sitter.github.io/tree-sitter/assets/schemas/grammar.schema.json",
   "name": "cosmos",
   "rules": {
-    "source_file": {
+    "definition_file": {
       "type": "REPEAT",
       "content": {
-        "type": "SYMBOL",
-        "name": "block"
+        "type": "CHOICE",
+        "members": [
+          {
+            "type": "SYMBOL",
+            "name": "command"
+          },
+          {
+            "type": "SYMBOL",
+            "name": "select_command"
+          },
+          {
+            "type": "SYMBOL",
+            "name": "telemetry"
+          },
+          {
+            "type": "SYMBOL",
+            "name": "select_telemetry"
+          }
+        ]
       }
-    },
-    "block": {
-      "type": "CHOICE",
-      "members": [
-        {
-          "type": "SYMBOL",
-          "name": "command"
-        },
-        {
-          "type": "SYMBOL",
-          "name": "select_command"
-        },
-        {
-          "type": "SYMBOL",
-          "name": "telemetry"
-        },
-        {
-          "type": "SYMBOL",
-          "name": "select_telemetry"
-        }
-      ]
     },
     "comment": {
       "type": "TOKEN",
@@ -1208,7 +1204,7 @@
       "type": "STRING",
       "value": "VIRTUAL"
     },
-    "_command_modifier": {
+    "command_modifier": {
       "type": "CHOICE",
       "members": [
         {
@@ -1289,7 +1285,7 @@
         }
       ]
     },
-    "_parameter_modifier": {
+    "parameter_modifier": {
       "type": "CHOICE",
       "members": [
         {
@@ -1366,12 +1362,12 @@
         }
       ]
     },
-    "_item_modifier": {
+    "item_modifier": {
       "type": "CHOICE",
       "members": [
         {
           "type": "SYMBOL",
-          "name": "_parameter_modifier"
+          "name": "parameter_modifier"
         },
         {
           "type": "SYMBOL",
@@ -1403,7 +1399,7 @@
         }
       ]
     },
-    "_telemetry_modifier": {
+    "telemetry_modifier": {
       "type": "CHOICE",
       "members": [
         {
@@ -1506,7 +1502,7 @@
             "members": [
               {
                 "type": "SYMBOL",
-                "name": "_command_modifier"
+                "name": "command_modifier"
               },
               {
                 "type": "SYMBOL",
@@ -1580,7 +1576,7 @@
             "members": [
               {
                 "type": "SYMBOL",
-                "name": "_command_modifier"
+                "name": "command_modifier"
               },
               {
                 "type": "SYMBOL",
@@ -1678,7 +1674,7 @@
                 },
                 {
                   "type": "SYMBOL",
-                  "name": "_parameter_modifier"
+                  "name": "parameter_modifier"
                 }
               ]
             }
@@ -2238,7 +2234,7 @@
             "members": [
               {
                 "type": "SYMBOL",
-                "name": "_telemetry_modifier"
+                "name": "telemetry_modifier"
               },
               {
                 "type": "SYMBOL",
@@ -2312,7 +2308,7 @@
             "members": [
               {
                 "type": "SYMBOL",
-                "name": "_telemetry_modifier"
+                "name": "telemetry_modifier"
               },
               {
                 "type": "SYMBOL",
@@ -2402,7 +2398,7 @@
                 },
                 {
                   "type": "SYMBOL",
-                  "name": "_item_modifier"
+                  "name": "item_modifier"
                 }
               ]
             }
@@ -3009,7 +3005,10 @@
   "externals": [],
   "inline": [],
   "supertypes": [
-    "block"
+    "command_modifier",
+    "parameter_modifier",
+    "telemetry_modifier",
+    "item_modifier"
   ],
   "reserved": {}
 }

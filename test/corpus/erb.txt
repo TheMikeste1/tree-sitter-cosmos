@@ -6,7 +6,7 @@ COMMAND INST <%= "CMD" %> BIG_ENDIAN
 
 ---
 
-(source_file
+(definition_file
   (command
     (command_definition
       target: (identifier)
@@ -23,7 +23,7 @@ ERB Directive
 
 ---
 
-(source_file
+(definition_file
   (erb_directive (code))
   (telemetry_definition
     (item_definition
@@ -42,7 +42,7 @@ COMMAND INST CMD BIG_ENDIAN
 
 ---
 
-(source_file
+(definition_file
   (erb_comment (code))
   (command
     (command_definition
@@ -58,7 +58,7 @@ Render
 
 ---
 
-(source_file
+(definition_file
   (erb_expression
     code: (code
       (render_call

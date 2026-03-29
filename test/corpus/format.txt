@@ -6,7 +6,7 @@ COMMAND INST CMD BIG_ENDIAN "Description part 1 " +
 
 ---
 
-(source_file
+(definition_file
   (command
     (command_definition
       target: (identifier)
@@ -25,7 +25,7 @@ COMMAND INST CMD BIG_ENDIAN
 
 ---
 
-(source_file
+(definition_file
   (command
     (command_definition
       target: (identifier)
@@ -77,7 +77,7 @@ COMMAND INST CMD &
 
 ---
 
-(source_file
+(definition_file
   (command
     (command_definition
       target: (identifier)

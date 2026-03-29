@@ -5,7 +5,7 @@ COMMAND INST CMD BIG_ENDIAN "Description"
 
 ---
 
-(source_file
+(definition_file
   (command
     (command_definition
       target: (identifier)
@@ -20,7 +20,7 @@ SELECT_COMMAND INST CMD
 
 ---
 
-(source_file
+(definition_file
   (select_command
     (select_command_definition
       target: (identifier)
@@ -39,7 +39,7 @@ SELECT_COMMAND INST CMD
 
 ---
 
-(source_file
+(definition_file
   (select_command
     (select_command_definition
       target: (identifier)
@@ -63,7 +63,7 @@ COMMAND INST CMD BIG_ENDIAN
 
 ---
 
-(source_file
+(definition_file
   (command
     (command_definition
       target: (identifier)
@@ -88,7 +88,7 @@ COMMAND INST CMD BIG_ENDIAN
 
 ---
 
-(source_file
+(definition_file
   (command
     (command_definition
       target: (identifier)
@@ -112,7 +112,7 @@ COMMAND INST CMD BIG_ENDIAN
 
 ---
 
-(source_file
+(definition_file
   (command
     (command_definition
       target: (identifier)
@@ -136,7 +136,7 @@ COMMAND INST CMD BIG_ENDIAN
 
 ---
 
-(source_file
+(definition_file
   (command
     (command_definition
       target: (identifier)
@@ -160,7 +160,7 @@ SELECT_COMMAND INST CMD
 
 ---
 
-(source_file
+(definition_file
   (select_command
     (select_command_definition
         target: (identifier)

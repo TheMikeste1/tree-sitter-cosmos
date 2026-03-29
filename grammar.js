@@ -10,10 +10,17 @@
 export default grammar({
   name: "cosmos",
   extras: ($) => [$.comment, /\s/, $._line_continuation],
-  supertypes: ($) => [$.block],
+  supertypes: ($) => [
+    $.command_modifier,
+    $.parameter_modifier,
+    $.telemetry_modifier,
+    $.item_modifier,
+  ],
   rules: {
-    source_file: ($) => repeat($.block),
-    block: ($) => choice($.command, $.select_command, $.telemetry, $.select_telemetry),
+    definition_file: ($) =>
+      repeat(
+        choice($.command, $.select_command, $.telemetry, $.select_telemetry),
+      ),
 
     comment: (_) => token(seq("#", /.*/)),
     dtype: (_) => choice("INT", "UINT", "FLOAT", "STRING", "BLOCK"),
@@ -180,10 +187,7 @@ export default grammar({
         repeat($.number),
       ),
     conversion_seg_poly_read: ($) =>
-      seq(
-        "SEG_POLY_READ_CONVERSION",
-        repeat1($.number),
-      ),
+      seq("SEG_POLY_READ_CONVERSION", repeat1($.number)),
     conversion_generic_read: ($) =>
       seq(
         "GENERIC_READ_CONVERSION_START",
@@ -223,7 +227,7 @@ export default grammar({
       ),
     modifier_virtual: (_) => "VIRTUAL",
 
-    _command_modifier: ($) =>
+    command_modifier: ($) =>
       choice(
         $.modifier_accessor,
         $.modifier_catchall,
@@ -245,7 +249,7 @@ export default grammar({
         $.modifier_validator,
         $.modifier_virtual,
       ),
-    _parameter_modifier: ($) =>
+    parameter_modifier: ($) =>
       choice(
         $.modifier_default_value,
         $.modifier_description,
@@ -266,9 +270,9 @@ export default grammar({
         $.conversion_poly_write,
         $.conversion_generic_write,
       ),
-    _item_modifier: ($) =>
+    item_modifier: ($) =>
       choice(
-        $._parameter_modifier,
+        $.parameter_modifier,
         $.modifier_limits,
         $.modifier_limits_response,
         $.modifier_converted_data,
@@ -277,7 +281,7 @@ export default grammar({
         $.conversion_seg_poly_read,
         $.conversion_generic_read,
       ),
-    _telemetry_modifier: ($) =>
+    telemetry_modifier: ($) =>
       choice(
         $.modifier_accessor,
         $.modifier_allow_short,
@@ -305,7 +309,7 @@ export default grammar({
       seq(
         $.command_definition,
         $._newline,
-        repeat(choice($._command_modifier, $.parameter)),
+        repeat(choice($.command_modifier, $.parameter)),
       ),
     command_definition: ($) =>
       seq(
@@ -320,7 +324,7 @@ export default grammar({
       seq(
         $.select_command_definition,
         $._newline,
-        repeat(choice($._command_modifier, $.parameter)),
+        repeat(choice($.command_modifier, $.parameter)),
       ),
     select_command_definition: ($) =>
       seq(
@@ -344,7 +348,7 @@ export default grammar({
             $.select_parameter_definition,
             $.delete_parameter,
           ),
-          repeat(seq($._newline, $._parameter_modifier)),
+          repeat(seq($._newline, $.parameter_modifier)),
           $._newline,
         ),
       ),
@@ -428,7 +432,7 @@ export default grammar({
       seq(
         $.telemetry_definition,
         $._newline,
-        repeat(choice($._telemetry_modifier, $.item)),
+        repeat(choice($.telemetry_modifier, $.item)),
       ),
     telemetry_definition: ($) =>
       seq(
@@ -443,7 +447,7 @@ export default grammar({
       seq(
         $.select_telemetry_definition,
         $._newline,
-        repeat(choice($._telemetry_modifier, $.item)),
+        repeat(choice($.telemetry_modifier, $.item)),
       ),
     select_telemetry_definition: ($) =>
       seq(
@@ -465,7 +469,7 @@ export default grammar({
             $.select_item_definition,
             $.delete_item_definition,
           ),
-          repeat(seq($._newline, $._item_modifier)),
+          repeat(seq($._newline, $.item_modifier)),
           $._newline,
         ),
       ),
