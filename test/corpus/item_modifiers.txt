@@ -1,6 +1,5 @@
 =================
 Item Modifiers
-:skip
 =================
 TELEMETRY INST HEALTH BIG_ENDIAN
   ITEM VOLTAGE 0 32 FLOAT

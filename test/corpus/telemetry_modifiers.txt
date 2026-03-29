@@ -1,6 +1,5 @@
 =================
 Telemetry Level Modifiers
-:skip
 =================
 TELEMETRY INST HEALTH BIG_ENDIAN
   HIDDEN

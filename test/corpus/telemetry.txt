@@ -1,6 +1,5 @@
 =================
 Telemetry Basic
-:skip
 =================
 TELEMETRY INST HEALTH BIG_ENDIAN "Description"
 
@@ -15,7 +14,6 @@ TELEMETRY INST HEALTH BIG_ENDIAN "Description"
 
 =================
 Select Telemetry
-:skip
 =================
 SELECT_TELEMETRY INST HEALTH
 
@@ -28,7 +26,6 @@ SELECT_TELEMETRY INST HEALTH
 
 =================
 Item Definition
-:skip
 =================
 TELEMETRY INST HEALTH BIG_ENDIAN
   ITEM VOLTAGE 0 32 FLOAT "Bus Voltage"
@@ -49,7 +46,6 @@ TELEMETRY INST HEALTH BIG_ENDIAN
 
 =================
 Append Item
-:skip
 =================
 TELEMETRY INST HEALTH BIG_ENDIAN
   APPEND_ITEM CURRENT 32 FLOAT "Bus Current"
@@ -69,7 +65,6 @@ TELEMETRY INST HEALTH BIG_ENDIAN
 
 =================
 ID Item
-:skip
 =================
 TELEMETRY INST HEALTH BIG_ENDIAN
   ID_ITEM PKT_ID 0 8 UINT 0x42
@@ -90,7 +85,6 @@ TELEMETRY INST HEALTH BIG_ENDIAN
 
 =================
 Array Item
-:skip
 =================
 TELEMETRY INST HEALTH BIG_ENDIAN
   ARRAY_ITEM TEMPERATURES 32 16 FLOAT 128 "Sensors"
@@ -112,7 +106,6 @@ TELEMETRY INST HEALTH BIG_ENDIAN
 
 =================
 Select Item
-:skip
 =================
 TELEMETRY INST HEALTH BIG_ENDIAN
   SELECT_ITEM VOLTAGE
@@ -129,7 +122,6 @@ TELEMETRY INST HEALTH BIG_ENDIAN
 
 =================
 Delete Item
-:skip
 =================
 TELEMETRY INST HEALTH BIG_ENDIAN
   DELETE_ITEM OLD_ITEM
