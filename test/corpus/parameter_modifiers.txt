@@ -54,13 +54,11 @@ COMMAND INST CMD BIG_ENDIAN
 
 =================
 Parameter Conversions
-:skip
 =================
 COMMAND INST CMD BIG_ENDIAN
   PARAMETER DATA 0 16 UINT 0 65535 0
     WRITE_CONVERSION my_script.rb "arg"
     POLY_WRITE_CONVERSION 1.0 2.0 3.0
-    SEG_POLY_WRITE_CONVERSION 0 100 1.0 2.0 3.0 100 200 4.0 5.0 6.0
     GENERIC_WRITE_CONVERSION_START
       value * 2
     GENERIC_WRITE_CONVERSION_END
@@ -73,17 +71,15 @@ COMMAND INST CMD BIG_ENDIAN
       target: (identifier)
       name: (identifier)
       endianness: (endianness))
-      (parameter_definition
-        name: (identifier)
-        bit_offset: (number)
-        bit_size: (number)
-        data_type: (number_dtype)
-        min: (number)
-        max: (number)
-        default: (number)
+      (parameter
+        (parameter_definition
+          name: (identifier)
+          bit_offset: (number)
+          bit_size: (number)
+          data_type: (number_dtype)
+          min: (number)
+          max: (number)
+          default: (number))
         (conversion_write script: (identifier) argument: (string))
         (conversion_poly_write (number) (number) (number))
-        (conversion_seg_poly_write
-          (number) (number) (number) (number) (number)
-          (number) (number) (number) (number) (number))
-        (conversion_generic_write (code))))))
+        (conversion_generic_write (code)))))

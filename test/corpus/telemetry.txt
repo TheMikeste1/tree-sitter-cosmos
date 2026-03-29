@@ -6,23 +6,39 @@ TELEMETRY INST HEALTH BIG_ENDIAN "Description"
 ---
 
 (source_file
-  (telemetry_definition
-    target: (identifier)
-    name: (identifier)
-    endianness: (endianness))
-    description: (string)))
+  (telemetry
+    (telemetry_definition
+      target: (identifier)
+      name: (identifier)
+      endianness: (endianness)
+      description: (string))))
 
 =================
 Select Telemetry
 =================
 SELECT_TELEMETRY INST HEALTH
+  HIDDEN
+  SELECT_ITEM VOLTAGE
+    STATE ON 1
+  DELETE_ITEM OLD_ITEM
 
 ---
 
 (source_file
-  (select_telemetry_definition
-    target: (identifier)
-    name: (identifier)))
+  (select_telemetry
+    (select_telemetry_definition
+      target: (identifier)
+      name: (identifier))
+    (modifier_hidden)
+    (item
+      (select_item_definition
+        name: (identifier))
+      (modifier_state
+        name: (identifier)
+        value: (number)))
+    (item
+      (delete_item_definition
+        name: (identifier)))))
 
 =================
 Item Definition
@@ -33,35 +49,40 @@ TELEMETRY INST HEALTH BIG_ENDIAN
 ---
 
 (source_file
-  (telemetry_definition
-    target: (identifier)
-    name: (identifier)
-    endianness: (endianness))
-    (item_definition
+  (telemetry
+    (telemetry_definition
+      target: (identifier)
       name: (identifier)
-      bit_offset: (number)
-      bit_size: (number)
-      data_type: (number_dtype)
-      description: (string))))
+      endianness: (endianness))
+    (item
+      (item_definition
+        name: (identifier)
+        bit_offset: (number)
+        bit_size: (number)
+        data_type: (number_dtype)
+        description: (string)))))
 
 =================
 Append Item
 =================
 TELEMETRY INST HEALTH BIG_ENDIAN
-  APPEND_ITEM CURRENT 32 FLOAT "Bus Current"
+  APPEND_ITEM CURRENT 32 FLOAT "Bus Current" LITTLE_ENDIAN
 
 ---
 
 (source_file
-  (telemetry_definition
-    target: (identifier)
-    name: (identifier)
-    endianness: (endianness))
-    (append_item_definition
+  (telemetry
+    (telemetry_definition
+      target: (identifier)
       name: (identifier)
-      bit_size: (number)
-      data_type: (number_dtype)
-      description: (string))))
+      endianness: (endianness))
+    (item
+      (append_item_definition
+        name: (identifier)
+        bit_size: (number)
+        data_type: (number_dtype)
+        description: (string)
+        endianness: (endianness)))))
 
 =================
 ID Item
@@ -72,16 +93,40 @@ TELEMETRY INST HEALTH BIG_ENDIAN
 ---
 
 (source_file
-  (telemetry_definition
-    target: (identifier)
-    name: (identifier)
-    endianness: (endianness))
-    (id_item_definition
+  (telemetry
+    (telemetry_definition
+      target: (identifier)
       name: (identifier)
-      bit_offset: (number)
-      bit_size: (number)
-      data_type: (number_dtype)
-      value: (number))))
+      endianness: (endianness))
+    (item
+      (id_item_definition
+        name: (identifier)
+        bit_offset: (number)
+        bit_size: (number)
+        data_type: (number_dtype)
+        value: (number)))))
+
+=================
+Append ID Item
+=================
+TELEMETRY INST HEALTH BIG_ENDIAN
+  APPEND_ID_ITEM PKT_ID 8 UINT 0x42 "Description"
+
+---
+
+(source_file
+  (telemetry
+    (telemetry_definition
+      target: (identifier)
+      name: (identifier)
+      endianness: (endianness))
+    (item
+      (append_id_item_definition
+        name: (identifier)
+        bit_size: (number)
+        data_type: (number_dtype)
+        value: (number)
+        description: (string)))))
 
 =================
 Array Item
@@ -92,17 +137,40 @@ TELEMETRY INST HEALTH BIG_ENDIAN
 ---
 
 (source_file
-  (telemetry_definition
-    target: (identifier)
-    name: (identifier)
-    endianness: (endianness))
-    (array_item_definition
+  (telemetry
+    (telemetry_definition
+      target: (identifier)
       name: (identifier)
-      bit_offset: (number)
-      item_bit_size: (number)
-      item_data_type: (identifier)
-      array_bit_size: (number)
-      description: (string))))
+      endianness: (endianness))
+    (item
+      (array_item_definition
+        name: (identifier)
+        bit_offset: (number)
+        item_bit_size: (number)
+        item_data_type: (identifier)
+        array_bit_size: (number)
+        description: (string)))))
+
+=================
+Append Array Item
+=================
+TELEMETRY INST HEALTH BIG_ENDIAN
+  APPEND_ARRAY_ITEM TEMPERATURES 16 FLOAT 128
+
+---
+
+(source_file
+  (telemetry
+    (telemetry_definition
+      target: (identifier)
+      name: (identifier)
+      endianness: (endianness))
+    (item
+      (append_array_item_definition
+        name: (identifier)
+        item_bit_size: (number)
+        item_data_type: (identifier)
+        array_bit_size: (number)))))
 
 =================
 Select Item
@@ -113,12 +181,14 @@ TELEMETRY INST HEALTH BIG_ENDIAN
 ---
 
 (source_file
-  (telemetry_definition
-    target: (identifier)
-    name: (identifier)
-    endianness: (endianness))
-    (select_item_definition
-      name: (identifier))))
+  (telemetry
+    (telemetry_definition
+      target: (identifier)
+      name: (identifier)
+      endianness: (endianness))
+    (item
+      (select_item_definition
+        name: (identifier)))))
 
 =================
 Delete Item
@@ -129,9 +199,11 @@ TELEMETRY INST HEALTH BIG_ENDIAN
 ---
 
 (source_file
-  (telemetry_definition
-    target: (identifier)
-    name: (identifier)
-    endianness: (endianness))
-    (delete_item_definition
-      name: (identifier))))
+  (telemetry
+    (telemetry_definition
+      target: (identifier)
+      name: (identifier)
+      endianness: (endianness))
+    (item
+      (delete_item_definition
+        name: (identifier)))))

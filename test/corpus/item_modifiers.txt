@@ -21,24 +21,26 @@ TELEMETRY INST HEALTH BIG_ENDIAN
 ---
 
 (source_file
-  (telemetry_definition
-    target: (identifier)
-    name: (identifier)
-    endianness: (endianness))
-    (item_definition
+  (telemetry
+    (telemetry_definition
+      target: (identifier)
       name: (identifier)
-      bit_offset: (number)
-      bit_size: (number)
-      data_type: (number_dtype)
+      endianness: (endianness))
+    (item
+      (item_definition
+        name: (identifier)
+        bit_offset: (number)
+        bit_size: (number)
+        data_type: (number_dtype))
       (modifier_state name: (identifier) value: (number))
       (modifier_state name: (identifier) value: (number))
-      (modifier_units label: (string) abbreviation: (string))
+      (modifier_units full_name: (string) abbreviated: (string))
       (modifier_format_string (string))
-      (modifier_description (string))
+      (modifier_description description: (string))
       (modifier_meta key: (identifier) value: (identifier))
       (modifier_overlap)
-      (modifier_key (identifier))
-      (modifier_variable_bit_size length_item: (identifier) bits_per_count: (number) value_bit_offset: (number))
+      (modifier_key key: (identifier))
+      (modifier_variable_bit_size length_field: (identifier) bits_per_count: (number) bit_offset: (number))
       (modifier_obfuscate)
       (modifier_hidden)
       (modifier_limits
@@ -53,8 +55,79 @@ TELEMETRY INST HEALTH BIG_ENDIAN
       (modifier_converted_data type: (identifier)))))
 
 =================
+Append ID Item Modifiers
+=================
+TELEMETRY INST HEALTH BIG_ENDIAN
+  APPEND_ID_ITEM PKT_ID 8 UINT 0x42
+    DESCRIPTION "Description"
+    META KEY VALUE
+
+---
+
+(source_file
+  (telemetry
+    (telemetry_definition
+      target: (identifier)
+      name: (identifier)
+      endianness: (endianness))
+    (item
+      (append_id_item_definition
+        name: (identifier)
+        bit_size: (number)
+        data_type: (number_dtype)
+        value: (number))
+      (modifier_description description: (string))
+      (modifier_meta key: (identifier) value: (identifier)))))
+
+=================
+Append Array Item Modifiers
+=================
+TELEMETRY INST HEALTH BIG_ENDIAN
+  APPEND_ARRAY_ITEM TEMPS 16 FLOAT 128 "Sensors"
+    UNITS "Celsius" "C"
+
+---
+
+(source_file
+  (telemetry
+    (telemetry_definition
+      target: (identifier)
+      name: (identifier)
+      endianness: (endianness))
+    (item
+      (append_array_item_definition
+        name: (identifier)
+        item_bit_size: (number)
+        item_data_type: (identifier)
+        array_bit_size: (number)
+        description: (string))
+      (modifier_units full_name: (string) abbreviated: (string)))))
+
+=================
+Derived Item
+=================
+TELEMETRY INST HEALTH BIG_ENDIAN
+  ITEM DERIVED_VAL 0 0 DERIVED
+    READ_CONVERSION my_script.rb "arg"
+
+---
+
+(source_file
+  (telemetry
+    (telemetry_definition
+      target: (identifier)
+      name: (identifier)
+      endianness: (endianness))
+    (item
+      (item_definition
+        name: (identifier)
+        bit_offset: (number)
+        bit_size: (number)
+        data_type: (number_dtype))
+      (conversion_read script: (identifier) argument: (string)))))
+
+=================
 Item Conversions
-:skip
 =================
 TELEMETRY INST HEALTH BIG_ENDIAN
   ITEM VOLTAGE 0 32 FLOAT
@@ -68,15 +141,17 @@ TELEMETRY INST HEALTH BIG_ENDIAN
 ---
 
 (source_file
-  (telemetry_definition
-    target: (identifier)
-    name: (identifier)
-    endianness: (endianness))
-    (item_definition
+  (telemetry
+    (telemetry_definition
+      target: (identifier)
       name: (identifier)
-      bit_offset: (number)
-      bit_size: (number)
-      data_type: (number_dtype)
+      endianness: (endianness))
+    (item
+      (item_definition
+        name: (identifier)
+        bit_offset: (number)
+        bit_size: (number)
+        data_type: (number_dtype))
       (conversion_read script: (identifier) argument: (string))
       (conversion_poly_read (number) (number) (number))
       (conversion_seg_poly_read

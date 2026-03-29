@@ -10,8 +10,82 @@
       {
         "type": "select_command",
         "named": true
+      },
+      {
+        "type": "select_telemetry",
+        "named": true
+      },
+      {
+        "type": "telemetry",
+        "named": true
       }
     ]
+  },
+  {
+    "type": "append_array_item_definition",
+    "named": true,
+    "fields": {
+      "array_bit_size": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "number",
+            "named": true
+          }
+        ]
+      },
+      "description": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "string",
+            "named": true
+          }
+        ]
+      },
+      "endianness": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "endianness",
+            "named": true
+          }
+        ]
+      },
+      "item_bit_size": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "number",
+            "named": true
+          }
+        ]
+      },
+      "item_data_type": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "identifier",
+            "named": true
+          }
+        ]
+      },
+      "name": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "identifier",
+            "named": true
+          }
+        ]
+      }
+    }
   },
   {
     "type": "append_array_parameter_definition",
@@ -73,6 +147,72 @@
         "types": [
           {
             "type": "identifier",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "append_id_item_definition",
+    "named": true,
+    "fields": {
+      "bit_size": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "number",
+            "named": true
+          }
+        ]
+      },
+      "data_type": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "number_dtype",
+            "named": true
+          }
+        ]
+      },
+      "description": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "string",
+            "named": true
+          }
+        ]
+      },
+      "endianness": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "endianness",
+            "named": true
+          }
+        ]
+      },
+      "name": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "identifier",
+            "named": true
+          }
+        ]
+      },
+      "value": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "number",
             "named": true
           }
         ]
@@ -178,6 +318,62 @@
     }
   },
   {
+    "type": "append_item_definition",
+    "named": true,
+    "fields": {
+      "bit_size": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "number",
+            "named": true
+          }
+        ]
+      },
+      "data_type": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "number_dtype",
+            "named": true
+          }
+        ]
+      },
+      "description": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "string",
+            "named": true
+          }
+        ]
+      },
+      "endianness": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "endianness",
+            "named": true
+          }
+        ]
+      },
+      "name": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "identifier",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
     "type": "append_parameter_definition",
     "named": true,
     "fields": {
@@ -259,6 +455,82 @@
         "types": [
           {
             "type": "number",
+            "named": true
+          }
+        ]
+      },
+      "name": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "identifier",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "array_item_definition",
+    "named": true,
+    "fields": {
+      "array_bit_size": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "number",
+            "named": true
+          }
+        ]
+      },
+      "bit_offset": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "number",
+            "named": true
+          }
+        ]
+      },
+      "description": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "string",
+            "named": true
+          }
+        ]
+      },
+      "endianness": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "endianness",
+            "named": true
+          }
+        ]
+      },
+      "item_bit_size": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "number",
+            "named": true
+          }
+        ]
+      },
+      "item_data_type": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "identifier",
             "named": true
           }
         ]
@@ -477,6 +749,149 @@
     }
   },
   {
+    "type": "conversion_generic_read",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "code",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "conversion_generic_write",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "code",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "conversion_poly_read",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "number",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "conversion_poly_write",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "number",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "conversion_read",
+    "named": true,
+    "fields": {
+      "argument": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "string",
+            "named": true
+          }
+        ]
+      },
+      "script": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "identifier",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "conversion_seg_poly_read",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "number",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "conversion_write",
+    "named": true,
+    "fields": {
+      "argument": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "string",
+            "named": true
+          }
+        ]
+      },
+      "script": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "identifier",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "delete_item_definition",
+    "named": true,
+    "fields": {
+      "name": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "identifier",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
     "type": "delete_parameter",
     "named": true,
     "fields": {
@@ -501,6 +916,82 @@
     "type": "endianness",
     "named": true,
     "fields": {}
+  },
+  {
+    "type": "id_item_definition",
+    "named": true,
+    "fields": {
+      "bit_offset": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "number",
+            "named": true
+          }
+        ]
+      },
+      "bit_size": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "number",
+            "named": true
+          }
+        ]
+      },
+      "data_type": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "number_dtype",
+            "named": true
+          }
+        ]
+      },
+      "description": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "string",
+            "named": true
+          }
+        ]
+      },
+      "endianness": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "endianness",
+            "named": true
+          }
+        ]
+      },
+      "name": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "identifier",
+            "named": true
+          }
+        ]
+      },
+      "value": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "number",
+            "named": true
+          }
+        ]
+      }
+    }
   },
   {
     "type": "id_parameter_definition",
@@ -611,6 +1102,215 @@
     }
   },
   {
+    "type": "item",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "append_array_item_definition",
+          "named": true
+        },
+        {
+          "type": "append_id_item_definition",
+          "named": true
+        },
+        {
+          "type": "append_item_definition",
+          "named": true
+        },
+        {
+          "type": "array_item_definition",
+          "named": true
+        },
+        {
+          "type": "conversion_generic_read",
+          "named": true
+        },
+        {
+          "type": "conversion_generic_write",
+          "named": true
+        },
+        {
+          "type": "conversion_poly_read",
+          "named": true
+        },
+        {
+          "type": "conversion_poly_write",
+          "named": true
+        },
+        {
+          "type": "conversion_read",
+          "named": true
+        },
+        {
+          "type": "conversion_seg_poly_read",
+          "named": true
+        },
+        {
+          "type": "conversion_write",
+          "named": true
+        },
+        {
+          "type": "delete_item_definition",
+          "named": true
+        },
+        {
+          "type": "id_item_definition",
+          "named": true
+        },
+        {
+          "type": "item_definition",
+          "named": true
+        },
+        {
+          "type": "modifier_converted_data",
+          "named": true
+        },
+        {
+          "type": "modifier_default_value",
+          "named": true
+        },
+        {
+          "type": "modifier_description",
+          "named": true
+        },
+        {
+          "type": "modifier_format_string",
+          "named": true
+        },
+        {
+          "type": "modifier_hidden",
+          "named": true
+        },
+        {
+          "type": "modifier_key",
+          "named": true
+        },
+        {
+          "type": "modifier_limits",
+          "named": true
+        },
+        {
+          "type": "modifier_limits_response",
+          "named": true
+        },
+        {
+          "type": "modifier_maximum_value",
+          "named": true
+        },
+        {
+          "type": "modifier_meta",
+          "named": true
+        },
+        {
+          "type": "modifier_minimum_value",
+          "named": true
+        },
+        {
+          "type": "modifier_obfuscate",
+          "named": true
+        },
+        {
+          "type": "modifier_overflow",
+          "named": true
+        },
+        {
+          "type": "modifier_overlap",
+          "named": true
+        },
+        {
+          "type": "modifier_required",
+          "named": true
+        },
+        {
+          "type": "modifier_state",
+          "named": true
+        },
+        {
+          "type": "modifier_units",
+          "named": true
+        },
+        {
+          "type": "modifier_variable_bit_size",
+          "named": true
+        },
+        {
+          "type": "select_item_definition",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "item_definition",
+    "named": true,
+    "fields": {
+      "bit_offset": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "number",
+            "named": true
+          }
+        ]
+      },
+      "bit_size": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "number",
+            "named": true
+          }
+        ]
+      },
+      "data_type": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "number_dtype",
+            "named": true
+          }
+        ]
+      },
+      "description": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "string",
+            "named": true
+          }
+        ]
+      },
+      "endianness": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "endianness",
+            "named": true
+          }
+        ]
+      },
+      "name": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "identifier",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
     "type": "modifier_accessor",
     "named": true,
     "fields": {
@@ -625,6 +1325,22 @@
         ]
       },
       "class": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "identifier",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "modifier_converted_data",
+    "named": true,
+    "fields": {
+      "type": {
         "multiple": false,
         "required": true,
         "types": [
@@ -729,6 +1445,189 @@
     }
   },
   {
+    "type": "modifier_limits",
+    "named": true,
+    "fields": {
+      "enabled": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "identifier",
+            "named": true
+          }
+        ]
+      },
+      "green_high": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "number",
+            "named": true
+          }
+        ]
+      },
+      "green_low": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "number",
+            "named": true
+          }
+        ]
+      },
+      "persistence": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "number",
+            "named": true
+          }
+        ]
+      },
+      "red_high": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "number",
+            "named": true
+          }
+        ]
+      },
+      "red_low": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "number",
+            "named": true
+          }
+        ]
+      },
+      "set": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "identifier",
+            "named": true
+          }
+        ]
+      },
+      "yellow_high": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "number",
+            "named": true
+          }
+        ]
+      },
+      "yellow_low": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "number",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "modifier_limits_group",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "identifier",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "modifier_limits_group_item",
+    "named": true,
+    "fields": {
+      "group": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "identifier",
+            "named": true
+          }
+        ]
+      },
+      "item": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "identifier",
+            "named": true
+          }
+        ]
+      },
+      "packet": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "identifier",
+            "named": true
+          }
+        ]
+      },
+      "target": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "identifier",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "modifier_limits_response",
+    "named": true,
+    "fields": {
+      "argument": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "string",
+            "named": true
+          }
+        ]
+      },
+      "script": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "identifier",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
     "type": "modifier_maximum_value",
     "named": true,
     "fields": {},
@@ -811,6 +1710,32 @@
           {
             "type": "TRUNCATE",
             "named": false
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "modifier_processor",
+    "named": true,
+    "fields": {
+      "argument": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "string",
+            "named": true
+          }
+        ]
+      },
+      "class": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "identifier",
+            "named": true
           }
         ]
       }
@@ -1108,6 +2033,18 @@
           "named": true
         },
         {
+          "type": "conversion_generic_write",
+          "named": true
+        },
+        {
+          "type": "conversion_poly_write",
+          "named": true
+        },
+        {
+          "type": "conversion_write",
+          "named": true
+        },
+        {
           "type": "id_parameter_definition",
           "named": true
         },
@@ -1121,6 +2058,10 @@
         },
         {
           "type": "modifier_format_string",
+          "named": true
+        },
+        {
+          "type": "modifier_hidden",
           "named": true
         },
         {
@@ -1328,6 +2269,147 @@
     }
   },
   {
+    "type": "select_item_definition",
+    "named": true,
+    "fields": {
+      "name": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "identifier",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "select_telemetry",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "item",
+          "named": true
+        },
+        {
+          "type": "modifier_accessor",
+          "named": true
+        },
+        {
+          "type": "modifier_allow_short",
+          "named": true
+        },
+        {
+          "type": "modifier_catchall",
+          "named": true
+        },
+        {
+          "type": "modifier_disabled",
+          "named": true
+        },
+        {
+          "type": "modifier_error_response",
+          "named": true
+        },
+        {
+          "type": "modifier_hazardous",
+          "named": true
+        },
+        {
+          "type": "modifier_hidden",
+          "named": true
+        },
+        {
+          "type": "modifier_ignore_overlap",
+          "named": true
+        },
+        {
+          "type": "modifier_limits_group",
+          "named": true
+        },
+        {
+          "type": "modifier_limits_group_item",
+          "named": true
+        },
+        {
+          "type": "modifier_meta",
+          "named": true
+        },
+        {
+          "type": "modifier_processor",
+          "named": true
+        },
+        {
+          "type": "modifier_related_item",
+          "named": true
+        },
+        {
+          "type": "modifier_response",
+          "named": true
+        },
+        {
+          "type": "modifier_restricted",
+          "named": true
+        },
+        {
+          "type": "modifier_screen",
+          "named": true
+        },
+        {
+          "type": "modifier_subpacketizer",
+          "named": true
+        },
+        {
+          "type": "modifier_template",
+          "named": true
+        },
+        {
+          "type": "modifier_validator",
+          "named": true
+        },
+        {
+          "type": "modifier_virtual",
+          "named": true
+        },
+        {
+          "type": "select_telemetry_definition",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "select_telemetry_definition",
+    "named": true,
+    "fields": {
+      "name": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "identifier",
+            "named": true
+          }
+        ]
+      },
+      "target": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "identifier",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
     "type": "source_file",
     "named": true,
     "root": true,
@@ -1349,6 +2431,151 @@
     "fields": {}
   },
   {
+    "type": "telemetry",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "item",
+          "named": true
+        },
+        {
+          "type": "modifier_accessor",
+          "named": true
+        },
+        {
+          "type": "modifier_allow_short",
+          "named": true
+        },
+        {
+          "type": "modifier_catchall",
+          "named": true
+        },
+        {
+          "type": "modifier_disabled",
+          "named": true
+        },
+        {
+          "type": "modifier_error_response",
+          "named": true
+        },
+        {
+          "type": "modifier_hazardous",
+          "named": true
+        },
+        {
+          "type": "modifier_hidden",
+          "named": true
+        },
+        {
+          "type": "modifier_ignore_overlap",
+          "named": true
+        },
+        {
+          "type": "modifier_limits_group",
+          "named": true
+        },
+        {
+          "type": "modifier_limits_group_item",
+          "named": true
+        },
+        {
+          "type": "modifier_meta",
+          "named": true
+        },
+        {
+          "type": "modifier_processor",
+          "named": true
+        },
+        {
+          "type": "modifier_related_item",
+          "named": true
+        },
+        {
+          "type": "modifier_response",
+          "named": true
+        },
+        {
+          "type": "modifier_restricted",
+          "named": true
+        },
+        {
+          "type": "modifier_screen",
+          "named": true
+        },
+        {
+          "type": "modifier_subpacketizer",
+          "named": true
+        },
+        {
+          "type": "modifier_template",
+          "named": true
+        },
+        {
+          "type": "modifier_validator",
+          "named": true
+        },
+        {
+          "type": "modifier_virtual",
+          "named": true
+        },
+        {
+          "type": "telemetry_definition",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "telemetry_definition",
+    "named": true,
+    "fields": {
+      "description": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "string",
+            "named": true
+          }
+        ]
+      },
+      "endianness": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "endianness",
+            "named": true
+          }
+        ]
+      },
+      "name": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "identifier",
+            "named": true
+          }
+        ]
+      },
+      "target": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "identifier",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
     "type": "+",
     "named": false
   },
@@ -1357,7 +2584,15 @@
     "named": false
   },
   {
+    "type": "APPEND_ARRAY_ITEM",
+    "named": false
+  },
+  {
     "type": "APPEND_ARRAY_PARAMETER",
+    "named": false
+  },
+  {
+    "type": "APPEND_ID_ITEM",
     "named": false
   },
   {
@@ -1365,7 +2600,15 @@
     "named": false
   },
   {
+    "type": "APPEND_ITEM",
+    "named": false
+  },
+  {
     "type": "APPEND_PARAMETER",
+    "named": false
+  },
+  {
+    "type": "ARRAY_ITEM",
     "named": false
   },
   {
@@ -1385,7 +2628,15 @@
     "named": false
   },
   {
+    "type": "CONVERTED_DATA",
+    "named": false
+  },
+  {
     "type": "DEFAULT_VALUE",
+    "named": false
+  },
+  {
+    "type": "DELETE_ITEM",
     "named": false
   },
   {
@@ -1421,6 +2672,26 @@
     "named": false
   },
   {
+    "type": "GENERIC_READ_CONVERSION_END",
+    "named": false
+  },
+  {
+    "type": "GENERIC_READ_CONVERSION_START",
+    "named": false
+  },
+  {
+    "type": "GENERIC_WRITE_CONVERSION_END",
+    "named": false
+  },
+  {
+    "type": "GENERIC_WRITE_CONVERSION_START",
+    "named": false
+  },
+  {
+    "type": "ID_ITEM",
+    "named": false
+  },
+  {
     "type": "ID_PARAMETER",
     "named": false
   },
@@ -1429,7 +2700,27 @@
     "named": false
   },
   {
+    "type": "ITEM",
+    "named": false
+  },
+  {
     "type": "KEY",
+    "named": false
+  },
+  {
+    "type": "LIMITS",
+    "named": false
+  },
+  {
+    "type": "LIMITS_GROUP",
+    "named": false
+  },
+  {
+    "type": "LIMITS_GROUP_ITEM",
+    "named": false
+  },
+  {
+    "type": "LIMITS_RESPONSE",
     "named": false
   },
   {
@@ -1465,6 +2756,22 @@
     "named": false
   },
   {
+    "type": "POLY_READ_CONVERSION",
+    "named": false
+  },
+  {
+    "type": "POLY_WRITE_CONVERSION",
+    "named": false
+  },
+  {
+    "type": "PROCESSOR",
+    "named": false
+  },
+  {
+    "type": "READ_CONVERSION",
+    "named": false
+  },
+  {
     "type": "RELATED_ITEM",
     "named": false
   },
@@ -1481,7 +2788,19 @@
     "named": false
   },
   {
+    "type": "SEG_POLY_READ_CONVERSION",
+    "named": false
+  },
+  {
     "type": "SELECT_COMMAND",
+    "named": false
+  },
+  {
+    "type": "SELECT_ITEM",
+    "named": false
+  },
+  {
+    "type": "SELECT_TELEMETRY",
     "named": false
   },
   {
@@ -1494,6 +2813,10 @@
   },
   {
     "type": "SUBPACKETIZER",
+    "named": false
+  },
+  {
+    "type": "TELEMETRY",
     "named": false
   },
   {
@@ -1521,6 +2844,14 @@
     "named": false
   },
   {
+    "type": "WRITE_CONVERSION",
+    "named": false
+  },
+  {
+    "type": "code",
+    "named": true
+  },
+  {
     "type": "comment",
     "named": true,
     "extra": true
@@ -1531,6 +2862,10 @@
   },
   {
     "type": "identifier",
+    "named": true
+  },
+  {
+    "type": "modifier_allow_short",
     "named": true
   },
   {
@@ -1547,6 +2882,10 @@
   },
   {
     "type": "modifier_hidden",
+    "named": true
+  },
+  {
+    "type": "modifier_ignore_overlap",
     "named": true
   },
   {

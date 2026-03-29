@@ -18,10 +18,11 @@ TELEMETRY INST HEALTH BIG_ENDIAN
 ---
 
 (source_file
-  (telemetry_definition
-    target: (identifier)
-    name: (identifier)
-    endianness: (endianness))
+  (telemetry
+    (telemetry_definition
+      target: (identifier)
+      name: (identifier)
+      endianness: (endianness))
     (modifier_hidden)
     (modifier_catchall)
     (modifier_virtual)
@@ -30,7 +31,7 @@ TELEMETRY INST HEALTH BIG_ENDIAN
     (modifier_processor class: (identifier) argument: (string))
     (modifier_accessor class: (identifier) argument: (string))
     (modifier_subpacketizer class: (identifier) argument: (string))
-    (modifier_template content: (string))
+    (modifier_template (string))
     (modifier_meta key: (identifier) value: (identifier))
     (modifier_limits_group (identifier))
     (modifier_limits_group_item target: (identifier) packet: (identifier) item: (identifier) group: (identifier))))
