@@ -332,7 +332,7 @@
         "required": true,
         "types": [
           {
-            "type": "identifier",
+            "type": "dtype",
             "named": true
           }
         ]
@@ -433,6 +433,14 @@
         "multiple": false,
         "required": true,
         "types": [
+          {
+            "type": "BLOCK",
+            "named": false
+          },
+          {
+            "type": "STRING",
+            "named": false
+          },
           {
             "type": "number_dtype",
             "named": true
@@ -597,6 +605,14 @@
         "multiple": false,
         "required": true,
         "types": [
+          {
+            "type": "BLOCK",
+            "named": false
+          },
+          {
+            "type": "STRING",
+            "named": false
+          },
           {
             "type": "number_dtype",
             "named": true
@@ -808,7 +824,7 @@
         "required": true,
         "types": [
           {
-            "type": "identifier",
+            "type": "dtype",
             "named": true
           }
         ]
@@ -1196,6 +1212,14 @@
         "required": true,
         "types": [
           {
+            "type": "BLOCK",
+            "named": false
+          },
+          {
+            "type": "STRING",
+            "named": false
+          },
+          {
             "type": "number_dtype",
             "named": true
           }
@@ -1426,6 +1450,14 @@
         "multiple": false,
         "required": true,
         "types": [
+          {
+            "type": "BLOCK",
+            "named": false
+          },
+          {
+            "type": "STRING",
+            "named": false
+          },
           {
             "type": "number_dtype",
             "named": true

@@ -98,7 +98,7 @@ TELEMETRY INST HEALTH BIG_ENDIAN
       (append_array_item_definition
         name: (identifier)
         item_bit_size: (number)
-        item_data_type: (identifier)
+        item_data_type: (dtype)
         array_bit_size: (number)
         description: (string))
       (modifier_units full_name: (string) abbreviated: (string)))))
