@@ -2760,6 +2760,46 @@
     "named": false
   },
   {
+    "type": "MAX_FLOAT32",
+    "named": false
+  },
+  {
+    "type": "MAX_FLOAT64",
+    "named": false
+  },
+  {
+    "type": "MAX_INT16",
+    "named": false
+  },
+  {
+    "type": "MAX_INT32",
+    "named": false
+  },
+  {
+    "type": "MAX_INT64",
+    "named": false
+  },
+  {
+    "type": "MAX_INT8",
+    "named": false
+  },
+  {
+    "type": "MAX_UINT16",
+    "named": false
+  },
+  {
+    "type": "MAX_UINT32",
+    "named": false
+  },
+  {
+    "type": "MAX_UINT64",
+    "named": false
+  },
+  {
+    "type": "MAX_UINT8",
+    "named": false
+  },
+  {
     "type": "META",
     "named": false
   },
@@ -2769,6 +2809,50 @@
   },
   {
     "type": "MINIMUM_VALUE",
+    "named": false
+  },
+  {
+    "type": "MIN_FLOAT32",
+    "named": false
+  },
+  {
+    "type": "MIN_FLOAT64",
+    "named": false
+  },
+  {
+    "type": "MIN_INT16",
+    "named": false
+  },
+  {
+    "type": "MIN_INT32",
+    "named": false
+  },
+  {
+    "type": "MIN_INT64",
+    "named": false
+  },
+  {
+    "type": "MIN_INT8",
+    "named": false
+  },
+  {
+    "type": "MIN_UINT16",
+    "named": false
+  },
+  {
+    "type": "MIN_UINT32",
+    "named": false
+  },
+  {
+    "type": "MIN_UINT64",
+    "named": false
+  },
+  {
+    "type": "MIN_UINT8",
+    "named": false
+  },
+  {
+    "type": "NEG_INFINITY",
     "named": false
   },
   {
@@ -2785,6 +2869,10 @@
   },
   {
     "type": "POLY_WRITE_CONVERSION",
+    "named": false
+  },
+  {
+    "type": "POS_INFINITY",
     "named": false
   },
   {
