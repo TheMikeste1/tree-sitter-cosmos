@@ -105,6 +105,27 @@ COMMAND INST CMD BIG_ENDIAN
           description: (string)))))
 
 =================
+Empty String Parameter
+=================
+COMMAND INST CMD BIG_ENDIAN
+  APPEND_PARAMETER DATA 16 STRING "" "Data"
+
+---
+
+(definition_file
+  (command
+    (command_definition
+      target: (identifier)
+      name: (identifier)
+      endianness: (endianness))
+      (parameter
+        (append_parameter_definition
+          name: (identifier)
+          bit_size: (number)
+          default: (string)
+          description: (string)))))
+
+=================
 ID Parameter
 =================
 COMMAND INST CMD BIG_ENDIAN

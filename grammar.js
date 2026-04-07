@@ -40,8 +40,8 @@ export default grammar({
       ),
     string: (_) =>
       choice(
-        seq(/"(\\"|[^"])+"/, optional(seq("+", /"(\\"|[^"])+"/))),
-        seq(/'(\\'|[^'])+'/, optional(seq("+", /'(\\'|[^'])+'/))),
+        seq(/"(\\"|[^"])*"/, optional(seq("+", /"(\\"|[^"])*"/))),
+        seq(/'(\\'|[^'])*'/, optional(seq("+", /'(\\'|[^'])*'/))),
       ),
 
     modifier_accessor: ($) =>
