@@ -10,6 +10,7 @@
 export default grammar({
   name: "cosmos",
   extras: ($) => [$.comment, /\s/, $._line_continuation],
+  externals: ($) => [$._code],
   supertypes: ($) => [
     $.command_modifier,
     $.parameter_modifier,
@@ -226,7 +227,6 @@ export default grammar({
         alias($._code, $.code),
         "GENERIC_WRITE_CONVERSION_END",
       ),
-    _code: (_) => token(repeat1(/[^G\s][^G]*/)),
     modifier_limits_group: ($) => seq("LIMITS_GROUP", $.identifier),
     modifier_limits_group_item: ($) =>
       seq(

@@ -1145,16 +1145,6 @@
         }
       ]
     },
-    "_code": {
-      "type": "TOKEN",
-      "content": {
-        "type": "REPEAT1",
-        "content": {
-          "type": "PATTERN",
-          "value": "[^G\\s][^G]*"
-        }
-      }
-    },
     "modifier_limits_group": {
       "type": "SEQ",
       "members": [
@@ -3168,7 +3158,12 @@
   ],
   "conflicts": [],
   "precedences": [],
-  "externals": [],
+  "externals": [
+    {
+      "type": "SYMBOL",
+      "name": "_code"
+    }
+  ],
   "inline": [],
   "supertypes": [
     "command_modifier",

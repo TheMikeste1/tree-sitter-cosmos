@@ -83,3 +83,32 @@ COMMAND INST CMD BIG_ENDIAN
         (conversion_write script: (identifier) argument: (string))
         (conversion_poly_write (number) (number) (number))
         (conversion_generic_write (code)))))
+
+=================
+Generic Conversion with G
+=================
+COMMAND INST CMD BIG_ENDIAN
+  PARAMETER DATA 0 16 UINT 0 65535 0
+    GENERIC_WRITE_CONVERSION_START
+      value * 2 + G_OFFSET
+    GENERIC_WRITE_CONVERSION_END
+
+---
+
+(definition_file
+  (command
+    (command_definition
+      target: (identifier)
+      name: (identifier)
+      endianness: (endianness))
+    (parameter
+      (parameter_definition
+        name: (identifier)
+        bit_offset: (number)
+        bit_size: (number)
+        data_type: (number_dtype)
+        min: (number)
+        max: (number)
+        default: (number))
+      (conversion_generic_write
+        (code)))))

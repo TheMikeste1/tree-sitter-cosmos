@@ -158,3 +158,31 @@ TELEMETRY INST HEALTH BIG_ENDIAN
         (number) (number) (number) (number) (number)
         (number) (number) (number) (number) (number))
       (conversion_generic_read (code)))))
+
+=================
+Generic Conversion with multiple G's
+=================
+TELEMETRY INST T1 BIG_ENDIAN
+  ITEM D1 0 16 UINT
+    GENERIC_READ_CONVERSION_START
+      def convert(value)
+        return value * G_CONST + OTHER_G_VALUE
+      end
+    GENERIC_READ_CONVERSION_END
+
+---
+
+(definition_file
+  (telemetry
+    (telemetry_definition
+      target: (identifier)
+      name: (identifier)
+      endianness: (endianness))
+    (item
+      (item_definition
+        name: (identifier)
+        bit_offset: (number)
+        bit_size: (number)
+        data_type: (number_dtype))
+      (conversion_generic_read
+        (code)))))
