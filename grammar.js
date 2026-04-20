@@ -27,6 +27,7 @@ export default grammar({
     dtype: (_) => choice("INT", "UINT", "FLOAT", "STRING", "BLOCK"),
     endianness: (_) => choice("BIG_ENDIAN", "LITTLE_ENDIAN"),
     number_dtype: (_) => choice("INT", "UINT", "FLOAT", "DERIVED"),
+    generic_dtype: (_) => choice("INT", "UINT", "FLOAT", "STRING", "BLOCK", "BOOL", "ARRAY", "OBJECT", "ANY", "TIME"),
 
     filename: (_) => /\w+\.\w+/,
     identifier: (_) => /[a-zA-Z_\$][a-zA-Z0-9_\.]*/,
@@ -187,13 +188,13 @@ export default grammar({
       seq(
         "READ_CONVERSION",
         field("script", $.identifier),
-        field("argument", $.string),
+        repeat(field("argument", choice($.string, $.identifier))),
       ),
     conversion_write: ($) =>
       seq(
         "WRITE_CONVERSION",
         field("script", $.identifier),
-        field("argument", $.string),
+        repeat(field("argument", choice($.string, $.identifier))),
       ),
     conversion_poly_read: ($) =>
       seq(
@@ -216,6 +217,12 @@ export default grammar({
     conversion_generic_read: ($) =>
       seq(
         "GENERIC_READ_CONVERSION_START",
+        optional(
+          seq(
+            $.generic_dtype,
+            optional($.number)
+          )
+        ),
         $._newline,
         alias($._code, $.code),
         "GENERIC_READ_CONVERSION_END",
@@ -223,6 +230,12 @@ export default grammar({
     conversion_generic_write: ($) =>
       seq(
         "GENERIC_WRITE_CONVERSION_START",
+        optional(
+          seq(
+            $.generic_dtype,
+            optional($.number)
+          )
+        ),
         $._newline,
         alias($._code, $.code),
         "GENERIC_WRITE_CONVERSION_END",

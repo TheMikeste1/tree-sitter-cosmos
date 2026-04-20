@@ -991,11 +991,19 @@
     "named": true,
     "fields": {},
     "children": {
-      "multiple": false,
+      "multiple": true,
       "required": true,
       "types": [
         {
           "type": "code",
+          "named": true
+        },
+        {
+          "type": "generic_dtype",
+          "named": true
+        },
+        {
+          "type": "number",
           "named": true
         }
       ]
@@ -1006,11 +1014,19 @@
     "named": true,
     "fields": {},
     "children": {
-      "multiple": false,
+      "multiple": true,
       "required": true,
       "types": [
         {
           "type": "code",
+          "named": true
+        },
+        {
+          "type": "generic_dtype",
+          "named": true
+        },
+        {
+          "type": "number",
           "named": true
         }
       ]
@@ -1051,9 +1067,13 @@
     "named": true,
     "fields": {
       "argument": {
-        "multiple": false,
-        "required": true,
+        "multiple": true,
+        "required": false,
         "types": [
+          {
+            "type": "identifier",
+            "named": true
+          },
           {
             "type": "string",
             "named": true
@@ -1092,9 +1112,13 @@
     "named": true,
     "fields": {
       "argument": {
-        "multiple": false,
-        "required": true,
+        "multiple": true,
+        "required": false,
         "types": [
+          {
+            "type": "identifier",
+            "named": true
+          },
           {
             "type": "string",
             "named": true
@@ -1180,6 +1204,11 @@
   },
   {
     "type": "endianness",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "generic_dtype",
     "named": true,
     "fields": {}
   },
@@ -2636,6 +2665,10 @@
     "named": false
   },
   {
+    "type": "ANY",
+    "named": false
+  },
+  {
     "type": "APPEND_ARRAY_ITEM",
     "named": false
   },
@@ -2664,6 +2697,10 @@
     "named": false
   },
   {
+    "type": "ARRAY",
+    "named": false
+  },
+  {
     "type": "ARRAY_ITEM",
     "named": false
   },
@@ -2677,6 +2714,10 @@
   },
   {
     "type": "BLOCK",
+    "named": false
+  },
+  {
+    "type": "BOOL",
     "named": false
   },
   {
@@ -2888,6 +2929,10 @@
     "named": false
   },
   {
+    "type": "OBJECT",
+    "named": false
+  },
+  {
     "type": "OVERFLOW",
     "named": false
   },
@@ -2981,6 +3026,10 @@
   },
   {
     "type": "TEMPLATE_FILE",
+    "named": false
+  },
+  {
+    "type": "TIME",
     "named": false
   },
   {
