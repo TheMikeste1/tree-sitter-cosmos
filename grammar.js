@@ -252,8 +252,8 @@ export default grammar({
     modifier_units: ($) =>
       seq(
         "UNITS",
-        field("full_name", $.string),
-        field("abbreviated", $.string),
+        field("full_name",   choice($.string, $.identifier)),
+        field("abbreviated", choice($.string, $.identifier)),
       ),
     modifier_variable_bit_size: ($) =>
       seq(

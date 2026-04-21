@@ -2164,6 +2164,10 @@
         "required": true,
         "types": [
           {
+            "type": "identifier",
+            "named": true
+          },
+          {
             "type": "string",
             "named": true
           }
@@ -2173,6 +2177,10 @@
         "multiple": false,
         "required": true,
         "types": [
+          {
+            "type": "identifier",
+            "named": true
+          },
           {
             "type": "string",
             "named": true

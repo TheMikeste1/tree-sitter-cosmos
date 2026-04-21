@@ -1337,16 +1337,34 @@
           "type": "FIELD",
           "name": "full_name",
           "content": {
-            "type": "SYMBOL",
-            "name": "string"
+            "type": "CHOICE",
+            "members": [
+              {
+                "type": "SYMBOL",
+                "name": "string"
+              },
+              {
+                "type": "SYMBOL",
+                "name": "identifier"
+              }
+            ]
           }
         },
         {
           "type": "FIELD",
           "name": "abbreviated",
           "content": {
-            "type": "SYMBOL",
-            "name": "string"
+            "type": "CHOICE",
+            "members": [
+              {
+                "type": "SYMBOL",
+                "name": "string"
+              },
+              {
+                "type": "SYMBOL",
+                "name": "identifier"
+              }
+            ]
           }
         }
       ]
