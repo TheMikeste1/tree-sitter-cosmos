@@ -30,7 +30,7 @@ export default grammar({
     generic_dtype: (_) => choice("INT", "UINT", "FLOAT", "STRING", "BLOCK", "BOOL", "ARRAY", "OBJECT", "ANY", "TIME"),
 
     filename: (_) => /\w+\.\w+/,
-    identifier: (_) => /[a-zA-Z_\$][a-zA-Z0-9_\.]*/,
+    identifier: (_) => /[a-zA-Z_\$][a-zA-Z0-9_\.:]*/,
     number: ($) =>
       choice(
         $._hexadecimal_number,
