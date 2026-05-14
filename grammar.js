@@ -96,7 +96,7 @@ export default grammar({
       seq(
         "META",
         field("key", $.identifier),
-        field("value", repeat1(choice($.identifier, $.string))),
+        field("value", repeat(choice($.identifier, $.string))),
       ),
     modifier_minimum_value: ($) => seq("MINIMUM_VALUE", $.number),
     modifier_obfuscate: (_) => "OBFUSCATE",

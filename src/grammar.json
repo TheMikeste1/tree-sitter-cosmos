@@ -516,7 +516,7 @@
           "type": "FIELD",
           "name": "value",
           "content": {
-            "type": "REPEAT1",
+            "type": "REPEAT",
             "content": {
               "type": "CHOICE",
               "members": [
