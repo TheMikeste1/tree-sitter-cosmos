@@ -136,6 +136,7 @@ export default grammar({
         "STATE",
         field("name", $.identifier),
         field("value", $.number),
+        optional(field("color", choice("GREEN", "YELLOW", "RED"))),
         optional(
           choice(
             $.modifier_disable_messages,

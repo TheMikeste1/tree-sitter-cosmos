@@ -2038,6 +2038,24 @@
     "type": "modifier_state",
     "named": true,
     "fields": {
+      "color": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "GREEN",
+            "named": false
+          },
+          {
+            "type": "RED",
+            "named": false
+          },
+          {
+            "type": "YELLOW",
+            "named": false
+          }
+        ]
+      },
       "description": {
         "multiple": false,
         "required": false,
@@ -2793,6 +2811,10 @@
     "named": false
   },
   {
+    "type": "GREEN",
+    "named": false
+  },
+  {
     "type": "ID_ITEM",
     "named": false
   },
@@ -2969,6 +2991,10 @@
     "named": false
   },
   {
+    "type": "RED",
+    "named": false
+  },
+  {
     "type": "RELATED_ITEM",
     "named": false
   },
@@ -3062,6 +3088,10 @@
   },
   {
     "type": "WRITE_CONVERSION",
+    "named": false
+  },
+  {
+    "type": "YELLOW",
     "named": false
   },
   {
